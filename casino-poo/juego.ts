@@ -6,5 +6,7 @@ class Juego{
     protected ruleta : Ruleta;
     protected crap : Crap;
 
-    constructor(){}
+    constructor(){
+        
+    }
 }
