@@ -10,7 +10,7 @@ export class Tragamoneda {
     }
     
     protected numRandom(): number {
-        return Math.floor(Math.random() * (3 - 0) + 1);
+        return Math.floor(Math.random() * (8 - 0) + 1);
     }
 
     public apuesta(paramCreditos: number): number {

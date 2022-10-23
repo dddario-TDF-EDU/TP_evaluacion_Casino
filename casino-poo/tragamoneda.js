@@ -8,7 +8,7 @@ var Tragamoneda = /** @class */ (function () {
         this.slot3 = this.numRandom();
     }
     Tragamoneda.prototype.numRandom = function () {
-        return Math.floor(Math.random() * (3 - 0) + 1);
+        return Math.floor(Math.random() * (8 - 0) + 1);
     };
     Tragamoneda.prototype.apuesta = function (paramCreditos) {
         this.tiro();
