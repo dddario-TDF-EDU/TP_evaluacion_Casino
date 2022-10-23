@@ -1,0 +1,27 @@
+El tapete se divide en cuadros con números del 0 al 36, siendo números negros: 2,
+4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33 y 35, y números colorados:
+1, 3, 5, 7, 9, 12. 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34 y 36.
+Números menores son los comprendidos entre el 1 y el 18, y números mayores los
+comprendidos entre el 19 y el 36. Todas estas chances se llaman simples.
+El número cero no tiene color ni pertenece a ninguna de estas combinaciones y de
+él se hablará en detalle más adelante.
+
+ Apuestas y premios
+Los números y letras indican la colocación exacta de las fichas en el tapete según el dibujo.
+(1) Pleno: paga 35 veces la postura; (2) Semipleno: 17 veces; (3) Calle: 11 veces;
+(4) Cuadro: 8 veces; (5) Línea: 5 veces; (6) Docena: 2 veces; (7) Columna: 2 veces;
+(8) Negro; (9) Colorado; (10) Mayores; (11) Menores; (12) Par; (13) Impar: duplican
+todos la postura inicial; (14) Columna a caballo; (15) Docena a caballo: cobran la
+mitad de lo apostado.
+Además de lo cobrado, el jugador retiene su apuesta.
+
+ Jugadas al cero
+Es el número que proporciona la ganancia o ventaja con que cuenta el banquero.
+Se lo puede jugar a pleno como los demás números y también de las maneras siguientes: (A) a semipleno (con el 1, el 2 ó el 3); (B) a cuadro (el 1, 2 y 3 con el cero); (C) a calle (1 y 2 con el cero, o si no el 2 y 3 con el cero).
+Cuando sale cero ganan todas las apuestas relacionadas con ese número; docenas, columnas y las chances simples pierden todo.
+
+Momento de las apuestas
+Se inician las apuestas en cuanto el croupier dice: “Hagan juego, señores” , y termina cuando después de hacer girar la ruleta dice: “No va más”. Seguidamente se
+“canta” el número correspondiente a la casilla donde cayó la bolilla para hacer saber cuál ha sido la suerte. Por ejemplo, si sale el 10 dirá: “Diez, negro par y menor”.
+Si sale el 27 dirá: “Veintisiete, colorado, impar y mayor”. Una vez pagadas las
+apuestas ganadoras se comienza de igual forma. En los casos en que salte la bolilla, las apuestas se reabren nuevamente y los jugadores pueden aumentar, cambiar o sacar sus fichas.

@@ -1,0 +1,27 @@
+Proceso de juego a la tragamonedas
+El jugador deberá determinar el valor de la apuesta y girar los carretes. La apuesta total por giro suele determinarse por uno o varios indicadores que se dan a continuación:
+El valor o el costo de la moneda. Los cálculos de la tragamonedas se hacen a base de la divisa de juego que son monedas o créditos. El cambio entre monedas y créditos se establece por el jugador.
+Cantidad de líneas de pago. Normalmente, el jugador activa las líneas de pago en la máquina tragaperras. Por defecto, se establece el número máximo.
+La apuesta por línea son monedas o créditos, apostados por una línea de pago.
+Muchas tragamonedas sólo ofrecen cambiar la apuesta total. Suelen tener el número fijo de líneas de pago. Después de asignar la apuesta se inician los giros de carretes. La mayoría de las tragamonedas ofrecen dos botones: Spin o Start y Autoplay. El primero sirve para girar los tambores sólo una vez. El segundo activa el modo de tiradas automáticas y los tambores se giran independientemente. El modo del juego automático es arriesgado debido a que no es fácil controlar el saldo gastado.
+
+Símbolos y premios en las tragamonedas
+Las máquinas de juego forman combinaciones de símbolos. Para obtener el premio es necesario recopilar varios símbolos idénticos en las líneas de pago. Las líneas de pago son esquemas indicados en las máquinas o combinaciones que aportan premios.
+La cantidad media de símbolos en los tambores es de 10 a 13. Los símbolos pueden clasificarse en ordinarios y especiales. Los símbolos ordinarios forman combinaciones que conllevan premios. Los símbolos especiales son imágenes con funciones adicionales. Entre éstos son:
+Símbolos wild que son comodines.
+Scatter.
+
+Símbolos de bonificación.
+Los wild sustituyen otros símbolos, completando las combinaciones que no se formarían por la ausencia de símbolos correspondientes. A menudo, los wild tienen multiplicadores de premio o tienen funciones especiales. Hay comodines "pegajosos" que se fijan en la pantalla de juego. Hay símbolos ampliables que cubren varias casillas o el tambor entero. Por lo tanto, ofrecen más posibilidades para ganar un premio.
+Scatter es el símbolo que garantiza un premio sin dependencia de la posición en la pantalla de juego. No tiene que aparecer obligatoriamente en la línea de pago. Normalmente estos símbolos conllevan giros gratis, tiradas repetidas y otras bonificaciones.
+Los símbolos de bonificación lanzan unos juegos adicionales.
+
+Cómo calcular el premio en la tragamonedas
+Las secuencias ganadoras se describen en la tabla de pagos. La pantalla de juego tiene un botón o enlace que sirve para abrirla. La tabla muestra la lista de premios o coeficientes por combinaciones ganadoras determinadas. Además, muestra los símbolos especiales y bonificaciones. Las combinaciones se clasifican en rentables y poco rentables. El premio por las combinaciones más rentables puede sobrepasar considerablemente la apuesta.
+Cada fabricante crea su propio esquema para calcular las ganancias. El esquema más común es multiplicar la apuesta por línea por coeficiente determinado. Algunos fabricantes se basan en el valor de la moneda o el nivel de la apuesta, como por ejemplo la compañía NetEnt. Muchos desarrolladores no indican coeficientes de pagos en la tabla, sino los premios en créditos a base de las apuestas correspondientes.
+
+Juegos de bonificación y juego de riesgo
+La mayoría de tragamonedas contemporáneas ofrecen juegos de bonificación. Las rondas de bonificación pueden consistir en giros gratis y tiradas repetidas. Además, muchas veces se ofrecen unos mini juegos interactivos.
+Las bonificaciones como "pick-me" ofrecen seleccionar varios objetos y recibir una recompensa. Normalmente las rondas están relacionadas con el tema de la tragaperras. Por ejemplo, los juegos de bonificación en las máquinas dedicadas a Robin Hood, suelen ofrecer varios disparos en el blanco.
+La ronda de riesgo es un juego que permite duplicar el premio por giro 2 veces o más. Se activa después de cada giro beneficioso. El tipo más frecuente del juego de riesgo consiste en adivinar el color y/o el palo de la carta. Muchas tragamonedas contienen el juego de riesgo de tipo escalera. Tiene forma de una pirámide con bloques que están parpadeando. Se necesita pulsar el botón en el momento, cuando el bloque de valor más alto esté iluminado. Entonces, el jugador recibirá un premio más alto.
+Entre otros tipos del juego de riesgo hay par o impar y rojo o negro. En cualquier caso, la respuesta correcta duplica el premio. La respuesta incorrecta anulará las ganancias y comenzará el juego principal.
