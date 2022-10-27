@@ -42,10 +42,9 @@ export class Tesoreria {
         this.capitalGeneral += paramDinero;
         this.totalCaja += paramDinero;
         return creditosSalida; 
-
     }
 
-    public venderCreditos(paramCreditos: number): number {
+    public intercambiarCreditos(paramCreditos: number): number {
         let dineroSalida: number = paramCreditos * this.valorCreditos;
         this.capitalGeneral -= dineroSalida;
         this.totalCaja -= dineroSalida;
