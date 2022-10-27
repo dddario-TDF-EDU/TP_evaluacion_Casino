@@ -12,7 +12,7 @@ export class Ruleta extends Juego {
     private segundaMitad: number[];
     private rojas: number[];
     private negras: number[];
-    private numFinal: number;
+    private resultadoRuleta: number;
 
     
     constructor(paramID: number, paramCreditos: number) {
@@ -27,14 +27,14 @@ export class Ruleta extends Juego {
         this.segundaMitad = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
         this.rojas = [32, 19, 21, 25, 34, 27, 36, 30, 23, 5, 16, 1, 14, 9, 18, 7, 12, 3];
         this.negras = [15, 4, 2, 17, 6, 13, 11, 8, 10, 24, 33, 20, 31, 22, 29, 28, 35, 26];
-        this.numFinal = 0;
+        this.resultadoRuleta = 0;
     }
 
     public apuestaPrimeraDocena(paramCreditos: number): number {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.primeraDocena.length; i++) {
-            if(this.primeraDocena[i] === this.numFinal) {
+            if(this.primeraDocena[i] === this.resultadoRuleta) {
                 multiplicador = 1.3;
                 return multiplicador * paramCreditos;
             }
@@ -47,7 +47,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.segundaDocena.length; i++) {
-            if(this.segundaDocena[i] === this.numFinal) {
+            if(this.segundaDocena[i] === this.resultadoRuleta) {
                 multiplicador = 1.3;
                 return multiplicador * paramCreditos;
             }
@@ -60,7 +60,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.terceraDocena.length; i++) {
-            if(this.terceraDocena[i] === this.numFinal) {
+            if(this.terceraDocena[i] === this.resultadoRuleta) {
                 multiplicador = 1.3;
                 return multiplicador * paramCreditos;
             }
@@ -73,7 +73,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.primeraColumna.length; i++) {
-            if(this.primeraColumna[i] === this.numFinal) {
+            if(this.primeraColumna[i] === this.resultadoRuleta) {
                 multiplicador = 1.3;
                 return multiplicador * paramCreditos;
             }
@@ -86,7 +86,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.segundaColumna.length; i++) {
-            if(this.segundaColumna[i] === this.numFinal) {
+            if(this.segundaColumna[i] === this.resultadoRuleta) {
                 multiplicador = 1.3;
                 return multiplicador * paramCreditos;
             }
@@ -99,7 +99,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.terceraColumna.length; i++) {
-            if(this.terceraColumna[i] === this.numFinal) {
+            if(this.terceraColumna[i] === this.resultadoRuleta) {
                 multiplicador = 1.3;
                 return multiplicador * paramCreditos;
             }
@@ -112,7 +112,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.primeraMitad.length; i++) {
-            if(this.primeraMitad[i] === this.numFinal) {
+            if(this.primeraMitad[i] === this.resultadoRuleta) {
                 multiplicador = 1.2;
                 return multiplicador * paramCreditos;
             }
@@ -125,7 +125,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.segundaMitad.length; i++) {
-            if(this.segundaMitad[i] === this.numFinal) {
+            if(this.segundaMitad[i] === this.resultadoRuleta) {
                 multiplicador = 1.2;
                 return multiplicador * paramCreditos;
             }
@@ -138,7 +138,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.rojas.length; i++) {
-            if(this.rojas[i] === this.numFinal) {
+            if(this.rojas[i] === this.resultadoRuleta) {
                 multiplicador = 1.2;
                 return multiplicador * paramCreditos;
             }
@@ -151,7 +151,7 @@ export class Ruleta extends Juego {
         this.girarRuleta();
         let multiplicador: number = 0;
         for(let i = 0; i < this.negras.length; i++) {
-            if(this.negras[i] === this.numFinal) {
+            if(this.negras[i] === this.resultadoRuleta) {
                 multiplicador = 1.2;
                 return multiplicador * paramCreditos;
             }
@@ -163,7 +163,7 @@ export class Ruleta extends Juego {
     public apuestaPares(paramCreditos: number): number {
         this.girarRuleta();
         let multiplicador: number = 0;
-        if((this.numFinal % 2) === 0 ) {
+        if((this.resultadoRuleta % 2) === 0 ) {
             multiplicador = 1.2;
             return multiplicador * paramCreditos;
         }
@@ -174,7 +174,7 @@ export class Ruleta extends Juego {
     public apuestaImpares(paramCreditos: number): number {
         this.girarRuleta();
         let multiplicador: number = 0;
-        if((this.numFinal % 2) === 1 ) {
+        if((this.resultadoRuleta % 2) === 1 ) {
             multiplicador = 1.2;
             return multiplicador * paramCreditos;
         }
@@ -185,7 +185,7 @@ export class Ruleta extends Juego {
     public apuestaNroUnico(paramCreditos: number, numElegido: number): number {
         this.girarRuleta();
         let multiplicador: number = 0;
-        if(this.numFinal === numElegido) {
+        if(Number(this.resultadoRuleta) === numElegido) {
             multiplicador = 5;
             return multiplicador * paramCreditos;
         }
@@ -197,7 +197,11 @@ export class Ruleta extends Juego {
 
     private girarRuleta(): void {
         let numeroSalida: number = Math.floor(Math.random() * (36));
-        this.numFinal = numeroSalida;
+        this.resultadoRuleta = numeroSalida;
+    }
+
+    public getResultadoRuleta(): number {
+        return this.resultadoRuleta;
     }
 
 }
