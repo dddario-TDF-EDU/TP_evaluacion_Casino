@@ -1,19 +1,47 @@
+import { Ticket } from "./interfazTicket";
 
 
-class Juego {
-    protected tragamoneda1 : TragamonedaSummer;
-    protected tragamoneda2 : TragamonedaWinter;
-    protected ruleta : Ruleta;
-    protected crap : Crap;
+export class Juego implements Ticket {
+    protected id : number;
+    //cambio a nombre mAs descriptivo(?)
+    protected cantCreditosEnMaquina: number;
+    protected balance : number;
+    protected cantApuestasTotales : number;
+    protected cantApuestasGanadas : number;
+    protected cantApuestasPerdidas : number;
 
-    constructor(){
-
+    constructor(paramID: number, paramCreditos: number) {
+        this.id = paramID;
+        this.cantCreditosEnMaquina = paramCreditos;
+        this.balance = 0;
+        this.cantApuestasTotales = 0;
+        this.cantApuestasGanadas = 0;
+        this.cantApuestasPerdidas = 0;
     }
 
     public ticketTotal(): string[] {
-        /*queda a terminar el total de cada componente de la interfaz ticket:
-        tragamoneda1.getCreditos() + tragamoneda2.getCreditos() + ruleta.getCreditos() +crap.getCreditos()
-        
-        */
+        /*cambio la Logica pero puede quedarse(?), revisar*/
+        return [];
     }
+
+    public  getCreditos(): number {
+        return this.cantCreditosEnMaquina;
+    }
+    //reemplaza a Perdida y ganancia
+    public getBalance(): number {
+        return this.balance;
+    }
+
+    public getCantidadApuestasTotales(): number {
+        return this.cantApuestasTotales;
+    }
+    
+    public getCantidadApuestasGanadas(): number {
+        return this.cantApuestasGanadas;
+    }
+
+    public getCantidadApuestasPerdidas(): number {
+        return this.cantApuestasPerdidas;
+    }
+
 }
