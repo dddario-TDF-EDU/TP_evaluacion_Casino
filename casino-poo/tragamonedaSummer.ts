@@ -6,8 +6,8 @@ export class TragamonedaSummer extends Tragamoneda {
     private slot3x3: number[] = new Array (3);
     private arraySimbolos: string;
 
-    constructor(){
-       super();
+    constructor(paramID: number, paramCreditos: number, paramCantApuestaMinima?: number){
+        super(paramID, paramCreditos, paramCantApuestaMinima);
        this.tiroDeMaquina();
        this.arraySimbolos = "$ƒ§#+@7";
     }
