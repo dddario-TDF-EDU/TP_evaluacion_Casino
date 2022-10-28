@@ -84,5 +84,9 @@ export class TragamonedaSummer extends Tragamoneda {
         
         return multiplicador;    
     }
+
+    protected numRandom(): number {
+        return Math.floor(Math.random() * (6 - 0) + 1);
+    }
     
 }    

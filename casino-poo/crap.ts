@@ -1,6 +1,6 @@
-class Ruleta{
+class Crap {
 
-    constructor(){
-        
+    constructor() {
+
     }
 }
