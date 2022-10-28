@@ -44,16 +44,6 @@ export class TragamonedaSummer extends Tragamoneda {
         return resultado;
     }
 
-    // private numCorrecto(numEntrada: number): number {
-    //     if(numEntrada > 8) {
-    //         return 1
-    //     }
-    //     if(numEntrada < 1) {
-    //         return 8;
-    //     }
-    //     return numEntrada;
-    // }
-
     public apuesta(paramCreditos: number): number {
         this.tiroDeMaquina();
         let multiplicador: number = this.verifica() + this.verificaEscalera();
