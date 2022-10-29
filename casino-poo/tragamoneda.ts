@@ -1,9 +1,12 @@
-export class Tragamoneda {
-    private slot1: number;
-    private slot2: number;
-    private slot3: number;
+import { Juego } from "./juego"
 
-    constructor(){
+export class Tragamoneda extends Juego {
+    protected slot1: number;
+    protected slot2: number;
+    protected slot3: number;
+
+    constructor(paramID: number, paramCreditos: number, paramCantApuestaMinima?: number){
+        super(paramID, paramCreditos, paramCantApuestaMinima);
         this.slot1 = this.numRandom();
         this.slot2 = this.numRandom();
         this.slot3 = this.numRandom();
@@ -15,7 +18,9 @@ export class Tragamoneda {
 
     public apuesta(paramCreditos: number): number {
         this.tiro();
-        let multiplicador: number = this.verifica() + this.verificaEscalera();
+        //metodo anterior
+        //let multiplicador: number = this.verifica() + this.verificaEscalera();
+        let multiplicador: number = this.verifica();
         let cantCreditos: number = paramCreditos * multiplicador;
         return cantCreditos;
     }
@@ -24,9 +29,6 @@ export class Tragamoneda {
         this.slot1 = this.numRandom();
         this.slot2 = this.numRandom();
         this.slot3 = this.numRandom();
-        console.log(this.slot1);
-        console.log(this.slot2);
-        console.log(this.slot3);
     }
 
     protected verifica(): number {
@@ -39,47 +41,56 @@ export class Tragamoneda {
         return multiplicador;
     }
 
-    protected verificaEscalera(): number {
-        let mayor: number = this.buscarMayor();
-        let menor: number = this.buscarMenor();
-        if(mayor === 0 || menor === 0) {
-            return 0;
-        } else if ( mayor === 3 && menor === 1) {
-            return 5;
-        } else {
-            return 5;
-        }     
+    public getResultado(): void {
+        console.log(this.slot1);
+        console.log(this.slot2);
+        console.log(this.slot3);
     }
 
-    private buscarMayor(): number {
-        if(this.slot1 > this.slot2 && this.slot1 > this.slot3) {
-            return 1;
-        }
+
+    //se puede borrar lo de abajo
+
+    // protected verificaEscalera(): number {
+    //     let mayor: number = this.buscarMayor();
+    //     let menor: number = this.buscarMenor();
+    //     if(mayor === 0 || menor === 0) {
+    //         return 0;
+    //     } else if ( mayor === 3 && menor === 1) {
+    //         return 5;
+    //     } else {
+    //         return 5;
+    //     }     
+    // }
+
+    // private buscarMayor(): number {
+    //     if(this.slot1 > this.slot2 && this.slot1 > this.slot3) {
+    //         return 1;
+    //     }
         
-        if (this.slot2 > this.slot1 && this.slot2 > this.slot3) {
-            return 0;
-        }
+    //     if (this.slot2 > this.slot1 && this.slot2 > this.slot3) {
+    //         return 0;
+    //     }
 
-        if (this.slot3 > this.slot1 && this.slot3 > this.slot2) {
-            return 3;
-        }
+    //     if (this.slot3 > this.slot1 && this.slot3 > this.slot2) {
+    //         return 3;
+    //     }
 
-        return 0;
-    }
+    //     return 0;
+    // }
 
-    private buscarMenor(): number {
-        if(this.slot1 < this.slot2 && this.slot1 < this.slot3) {
-            return 1;
-        }
-        if (this.slot2 < this.slot1 && this.slot2 < this.slot3) {
-            return 0;
-        }
+    // private buscarMenor(): number {
+    //     if(this.slot1 < this.slot2 && this.slot1 < this.slot3) {
+    //         return 1;
+    //     }
+    //     if (this.slot2 < this.slot1 && this.slot2 < this.slot3) {
+    //         return 0;
+    //     }
 
-        if (this.slot3 < this.slot1 && this.slot3 < this.slot2) {
-            return 3;
-        }
+    //     if (this.slot3 < this.slot1 && this.slot3 < this.slot2) {
+    //         return 3;
+    //     }
 
-        return 0;
-    }
+    //     return 0;
+    // }
 
 }
