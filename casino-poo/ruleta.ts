@@ -159,7 +159,7 @@ export class Ruleta extends Juego {
     public apuestaNroUnico(paramCreditos: number, numElegido: number): number {
         this.girarRuleta();
         let multiplicador: number = 0;
-        if(Number(this.resultadoRuleta) === numElegido) {
+        if(Number(this.resultadoRuleta) == Number(numElegido)) {
             multiplicador = 5;
             return multiplicador * paramCreditos;
         }
