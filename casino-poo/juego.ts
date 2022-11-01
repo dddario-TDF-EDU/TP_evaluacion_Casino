@@ -49,4 +49,8 @@ export class Juego implements Ticket {
         return this.cantApuestasPerdidas;
     }
 
+    public getApuestaMinima(): number {
+        return this.cantApuestaMinima;
+    }
+
 }
