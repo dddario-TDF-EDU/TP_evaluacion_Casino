@@ -2,7 +2,9 @@ Reglas del Craps
 En el Craps, los jugadores se turnan para ocupan el lugar de tirador y lanzar dos dados de seis caras sobre la mesa. El objetivo principal del juego es hacer una apuesta exitosa sobre los resultados de las tiradas, ya sea sobre la siguiente o sobre un resultado específico que sucederá antes de que finalice la ronda.
 Las partidas de Craps se dividen en dos secciones: la salida y el punto. La tirada de salida es la primera de la ronda. Si sale un 7 o un 11, se conoce como natural y si sale un 2, un 3 o un 12, se conoce como “crapping out”. En ambos casos, la ronda termina allí.
 En este caso, la ronda continúa hasta sacar el punto o un 7. Si no sale ninguno, el jugador debe volver a tirar hasta sacar el punto o un 7.
-Para mostrar en qué etapa se encuentra la ronda, se coloca un indicador sobre la mesa. Antes de la tirada de salida, este indicador muestra “Off” (inactivo). Luego de establecer un punto, el indicador se traslada al siguiente número relevante de la mesa y se lo da vuelta para que muestre la palabra “On” (activo).
+Para mostrar en qué etapa se encuentra la ronda, se coloca un indicador sobre la mesa. Antes de la tirada de salida,
+este indicador muestra “Off” (inactivo). Luego de establecer un punto, el indicador se traslada al siguiente número
+relevante de la mesa y se lo da vuelta para que muestre la palabra “On” (activo).
 El jugador ocupa el lugar de tirador hasta que pierde la ronda. En la tirada de salida, el jugador gana la ronda si saca un natural y la pierde si saca un “crap out”. En las tiradas de puntos, el jugador gana la ronda si saca el punto y la pierde si saca un 7, lo que se conoce como “siete fuera”. El siguiente tirador es el jugador ubicado a la izquierda del tirador de turno.
 A continuación, se muestra una mesa de Craps estándar. Para hacer una apuesta se deben colocar las fichas en el sector correspondiente de la mesa.
 
@@ -20,20 +22,29 @@ Si se saca cualquier otro número (4, 5, 6, 8, 9 o 10) y se establece un punto, 
 
 Apuesta de barra de no pase
 
-Esta es la apuesta contraria a la anterior, ya que se apuesta a que el tirador perderá la ronda. El tirador debe hacer este tipo de apuesta si no quiere hacer la de línea de pase. Para el resto de los jugadores, esta apuesta es opcional.
-Para hacer una apuesta de barra de no pase se deben colocar las fichas en el sector de la mesa marcado como “Barra de no pase”. Estas apuestas solo se pueden realizar antes de la tirada de salida y ofrecen un pago de 1:1.
+Esta es la apuesta contraria a la anterior, ya que se apuesta a que el tirador perderá la ronda.
+El tirador debe hacer este tipo de apuesta si no quiere hacer la de línea de pase.
+Para el resto de los jugadores, esta apuesta es opcional.
+Para hacer una apuesta de barra de no pase se deben colocar las fichas en el sector de la mesa marcado como “Barra de no pase”.
+Estas apuestas solo se pueden realizar antes de la tirada de salida y ofrecen un pago de 1:1.
 Las apuestas de barra de no pase funcionan de la siguiente manera, en función de la tirada de salida:
 Si sale un 2 o un 3, la apuesta gana.
 Si sale un 7 o un 11, la apuesta pierde.
 Si sale un 12, hay empate. Esto significa que la apuesta no gana ni pierde sino que se devuelve al jugador.
 Si se saca cualquier otro número (4, 5, 6, 8, 9 o 10) y se establece un punto, la apuesta gana si sale un 7 y pierde si sale el punto nuevamente.
-Si se establece un punto, las apuestas de barra de no pase se pueden reducir o eliminar de la mesa. Hacer una apuesta de barra de no pase también se conoce como “jugarle al lado oscuro” y en general está mal visto por los otros jugadores del casino.
+Si se establece un punto, las apuestas de barra de no pase se pueden reducir o eliminar de la mesa. 
+Hacer una apuesta de barra de no pase también se conoce como “jugarle al lado oscuro” y en general está mal visto por los otros jugadores del casino.
 
 Apuesta de gabela a favor
 
-Si se establece un punto, el jugador puede hacer una apuesta de gabela a favor a que el punto saldrá nuevamente antes que el 7. Esta apuesta ofrece un pago de 2:1 si el punto es un 4 o un 10, 3:2 si es un 5 o un 9 y 6:5 si es un 6 o un 8.
-Solo se pueden hacer apuestas de gabela a favor si el jugador ya hizo una apuesta de línea de pase. En ocasiones, estas apuestas tienen un límite de tres veces el monto apostado en línea de pase si el punto es un 4 o un 10, cuatro veces si el punto es un 5 o un 9 y cinco veces si el punto es un 6 o un 8.
-Para hacer una apuesta de gabela a favor se deben colocar las fichas en el sector de la mesa marcado como “Línea de pase”. El jugador puede reducir o eliminar de la mesa este tipo de apuestas, además de declararlas “inactivas” (si el resultado se establece mientras la apuesta esta “inactiva”, se le devuelve el valor al jugador).
+Si se establece un punto, el jugador puede hacer una apuesta de gabela a favor a que el punto saldrá nuevamente antes que el 7. 
+Esta apuesta ofrece un pago de 2:1 si el punto es un 4 o un 10, 3:2 si es un 5 o un 9 y 6:5 si es un 6 o un 8.
+Solo se pueden hacer apuestas de gabela a favor si el jugador ya hizo una apuesta de línea de pase. 
+En ocasiones, estas apuestas tienen un límite de tres veces el monto apostado en línea de pase si el punto es un 4 o un 10, 
+cuatro veces si el punto es un 5 o un 9 y cinco veces si el punto es un 6 o un 8.
+Para hacer una apuesta de gabela a favor se deben colocar las fichas en el sector de la mesa marcado como “Línea de pase”. 
+El jugador puede reducir o eliminar de la mesa este tipo de apuestas, además de declararlas “inactivas” 
+(si el resultado se establece mientras la apuesta esta “inactiva”, se le devuelve el valor al jugador).
 
 Apuesta de gabela en contra
 
