@@ -10,7 +10,7 @@ function mensajesMenuSummer(): void {
     console.log("3 _ Salir");
 }
 
-function menuSummer(paramCreditos: number): number {
+export function menuSummer(paramCreditos: number): number {
     let readlineSync = require('readline-sync');
     //chequeamos si la persona tiene creditos suficientes para usar la maquina.
     if(paramCreditos > summer.getApuestaMinima()) {

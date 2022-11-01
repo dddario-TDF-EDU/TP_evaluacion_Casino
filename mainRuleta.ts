@@ -21,7 +21,7 @@ function mensajesMenuRuleta(): void {
     console.log("14 _ Salir");
 }
 
-function menuRuleta(paramCreditos: number): number {
+export function menuRuleta(paramCreditos: number): number {
     let readlineSync = require('readline-sync');
     if(paramCreditos > 0) {
         console.log("Usted posee "+ paramCreditos + " creditos.")
