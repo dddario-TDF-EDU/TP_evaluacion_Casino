@@ -3,9 +3,10 @@ import { Juego } from "./juego";
 import { TragamonedaSummer } from "./tragamonedaSummer"
 import { TragamonedaWinter } from "./TragamonedaWinter"
 import { Ruleta } from "./ruleta"
+import { Crap } from "./crap";
 
-class Casino {
-    //private juegoCrap: Crap;
+export class Casino {
+    private juegoCrap: Crap;
     private juegoSummer: TragamonedaSummer;
     private juegoWinter: TragamonedaWinter;
     private juegoRuleta: Ruleta;
@@ -14,7 +15,7 @@ class Casino {
     private capitalGeneral: number;
     private valorCreditos: number;
 
-    public constructor(paramCapitalGeneral: number, paramValorCredito: number, paramJuegos: Juego[], paramCliente: Cliente, pSummer: TragamonedaSummer, pWinter: TragamonedaWinter, pRuleta: Ruleta) {
+    public constructor(paramCapitalGeneral: number, paramValorCredito: number, paramCliente: Cliente, pSummer: TragamonedaSummer, pWinter: TragamonedaWinter, pRuleta: Ruleta, pCrap: Crap) {
         this.valorCreditos = paramValorCredito;
         this.capitalGeneral = paramCapitalGeneral;
         this.balance = 0;
@@ -22,6 +23,7 @@ class Casino {
         this.juegoSummer = pSummer;
         this.juegoWinter = pWinter;
         this.juegoRuleta = pRuleta;
+        this.juegoCrap = pCrap; 
     }
 
     public getBalance(): number {

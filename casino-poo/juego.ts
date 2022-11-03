@@ -24,11 +24,6 @@ export class Juego implements Ticket {
         }
     }
 
-    public ticketTotal(): string[] {
-        /*cambio la Logica pero puede quedarse(?), revisar*/
-        return [];
-    }
-
     public  getCreditos(): number {
         return this.cantCreditosEnMaquina;
     }
