@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var crap_1 = require("./casino-poo/crap");
+//let apuesta1: Juego = new Juego(123,200,undefined);
+var juego1 = new crap_1.Crap(2, 124, 100);
+var juego2 = new crap_1.Crap(3, 125, 300);
+var juego3 = new crap_1.Crap(12, 123, 400);
+var juego4 = new crap_1.Crap(4, 126, 500);
+juego1.apostarSalida(200);
+juego2.apostarEnField(100);
+juego3.apostardontPassBar(100);
+juego4.apostarPassLine(100);
