@@ -1,6 +1,6 @@
 import { Tragamoneda } from "./tragamoneda";
 
-class TragamonedaWinter extends Tragamoneda {
+export class TragamonedaWinter extends Tragamoneda {
     
     private rango: number;
 
