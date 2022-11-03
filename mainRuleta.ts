@@ -200,5 +200,3 @@ function pausaParaLeer(): void {
     let readlineSync = require('readline-sync');
     let pausa = readlineSync.question('');
 }
-
-menuRuleta(1000);

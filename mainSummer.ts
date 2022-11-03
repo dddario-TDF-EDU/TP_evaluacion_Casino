@@ -1,5 +1,6 @@
 import { TragamonedaSummer } from "./casino-poo/tragamonedaSummer";
 
+//reeemplazamos esto y entra cada uno por parametro?
 let summer: TragamonedaSummer = new TragamonedaSummer(0,100,100);
 
 function mensajesMenuSummer(): void {
@@ -93,5 +94,3 @@ function pausaParaLeer(): void {
     let readlineSync = require('readline-sync');
     let pausa = readlineSync.question('');
 }
-
-menuSummer(1000);
