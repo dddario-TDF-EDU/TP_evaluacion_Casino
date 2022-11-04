@@ -90,11 +90,12 @@ export class Casino {
         //nombres hardcodeados.
     private mensajesMenuCentral(): void {
         console.log("Menu principal");
-        console.log("1 _ Jugar con maquina tragamonedas Summer.");
-        console.log("2 _ Jugar con maquina tragamonedas Winter.");
-        console.log("3 _ Jugar ruleta.");
-        console.log("4 _ Jugar crap.");
-        console.log("5 _ Salir.");
+        for(let i = 0; i < this.juegos.length; i++) {
+            console.log((i+1) + " _ Jugar con " + this.juegos[i].getNombre());
+            if(i+2 > this.juegos.length) {
+                console.log( (i+2) + " _ Salir.");
+            }
+        }
         console.log("");
     }
     

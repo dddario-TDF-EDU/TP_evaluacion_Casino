@@ -16,9 +16,9 @@ let summer1: TragamonedaSummer = new TragamonedaSummer(0, "Tragamonedas Summer",
 let winter1: TragamonedaWinter = new TragamonedaWinter(1, "Tragamonedas Winter", 10000);
 let ruleta1: Ruleta = new Ruleta(2, "La Ruleta",10000);
 //los dados no necesitan parametro, y alteran el orden.
-let crap1: Crap = new Crap(0, 3, 10000);
+//let crap1: Crap = new Crap(0, 3, 10000);
 
-let juegosCasino: Juego[] = [summer1, winter1, ruleta1, crap1];
+let juegosCasino: Juego[] = [summer1, winter1, ruleta1];
 
 //preguntamos la cantidad de plata que posee el cliente.
 function cantDineroCliente(): number {

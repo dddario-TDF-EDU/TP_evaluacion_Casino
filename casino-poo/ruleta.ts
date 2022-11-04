@@ -4,8 +4,8 @@ export class Ruleta extends Juego {
 
     private resultadoRuleta: number;
     
-    constructor(paramID: number, paramName: string, paramCreditos: number, paramCantApuestaMinima?: number) {
-        super(paramID, paramName, paramCreditos, paramCantApuestaMinima);
+    constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number) {
+        super(paramID, paramNombre, paramCreditos, paramCantApuestaMinima);
         this.resultadoRuleta = 0;
     }
 

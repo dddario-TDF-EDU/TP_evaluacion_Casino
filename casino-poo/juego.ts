@@ -3,7 +3,7 @@ import { Ticket } from "./interfazTicket";
 
 export class Juego implements Ticket {
     protected id : number;
-    protected name: string;
+    protected nombre: string;
     protected cantCreditosEnMaquina: number;
     protected balance: number;
     protected cantApuestasTotales : number;
@@ -11,9 +11,9 @@ export class Juego implements Ticket {
     protected cantApuestasPerdidas : number;
     protected cantApuestaMinima: number;
 
-    constructor(paramID: number, paramName: string, paramCreditos: number, paramCantApuestaMinima?: number) {
+    constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number) {
         this.id = paramID;
-        this.name = paramName;
+        this.nombre = paramNombre;
         this.cantCreditosEnMaquina = paramCreditos;
         this.balance = 0;
         this.cantApuestasTotales = 0;
@@ -50,8 +50,8 @@ export class Juego implements Ticket {
         return this.cantApuestaMinima;
     }
 
-    public getName(): string {
-        return this.name;
+    public getNombre(): string {
+        return this.nombre;
     }
 
     public jugar(paramCreditos: number, paramJuego: Juego): number {
