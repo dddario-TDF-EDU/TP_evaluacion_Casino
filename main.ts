@@ -19,7 +19,8 @@ function menuCentral(paramCreditos: number): number {
             //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
             console.log("numero erroneo Intente nuevamente");
             console.clear();//para limpiar la pantalla
-            menuCentral(paramCreditos);
+            //debe ser un return??
+            return menuCentral(paramCreditos);
         } else if(opcionDeseada === 5) {
             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
             console.log("Usted se retira con " + paramCreditos + " creditos.");
@@ -27,7 +28,8 @@ function menuCentral(paramCreditos: number): number {
             return paramCreditos;
         } else {
             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-            menuCentral(ejecucionMaquinas(opcionDeseada, paramCreditos));
+            //debe ser un return??
+            return menuCentral(ejecucionMaquinas(opcionDeseada, paramCreditos));
         }
     } else {
         console.log("Usted ya no posee creditos suficientes, gracias por jugar vuelva pronto.");

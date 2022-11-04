@@ -8,33 +8,6 @@ var casino_1 = require("./casino-poo/casino");
 var TragamonedaWinter_1 = require("./casino-poo/TragamonedaWinter");
 var ruleta_1 = require("./casino-poo/ruleta");
 var crap_1 = require("./casino-poo/crap");
-//falta resolver la clase Cliente-Tesorersia-Casino para poder probar esto.
-var summer1 = new tragamonedaSummer_1.TragamonedaSummer(0, 10000, 100);
-var winter1 = new TragamonedaWinter_1.TragamonedaWinter(1, 10000);
-var ruleta1 = new ruleta_1.Ruleta(2, 10000);
-//los dados no necesitan parametro, y alteran el orden.
-var crap1 = new crap_1.Crap(0, 3, 10000);
-//preguntamos la cantidad de plata que posee el cliente.
-function cantDineroCliente() {
-    var readlineSync = require('readline-sync');
-    var cantDineroIngresado = readlineSync.questionInt('Ingrese la cantidad de dinero que va a convertir a credito: ');
-    if (cantDineroIngresado < 1) {
-        console.log("Por favor ingrese un numero valido.");
-        cantDineroCliente();
-    }
-    return cantDineroIngresado;
-}
-var cliente1 = new cliente_1.Cliente(cantDineroCliente());
-//instanciamos la clase Casino.
-var casino777 = new casino_1.Casino(100000, 0.5, cliente1, summer1, winter1, ruleta1, crap1);
-//convertimos todos el dinero del cliente en credito. 
-//esto quedo re feo
-cliente1.setCreditos(casino777.comprarCreditos(cliente1.getDinero()));
-cliente1.setDinero(0);
-cliente1.setCreditos(menuCentral(cliente1.getCreditos()));
-//UNA VEZ TERMINADO DE JUGAR RECUPERAMOS EL DINERO.
-cliente1.setDinero(casino777.intercambiarCreditos(cliente1.getCreditos()));
-//FALTA HACER EL DESCUENTO Y SUMA A LOS JUEGOS.
 function menuCentral(paramCreditos) {
     console.log("Bienvenido al casino RXXXX");
     console.log("Usted posee " + paramCreditos + " creditos.");
@@ -46,6 +19,7 @@ function menuCentral(paramCreditos) {
             //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
             console.log("numero erroneo Intente nuevamente");
             console.clear(); //para limpiar la pantalla
+            //debe ser un return??
             menuCentral(paramCreditos);
         }
         else if (opcionDeseada === 5) {
@@ -56,6 +30,7 @@ function menuCentral(paramCreditos) {
         }
         else {
             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
+            //debe ser un return??
             menuCentral(ejecucionMaquinas(opcionDeseada, paramCreditos));
         }
     }
@@ -83,3 +58,30 @@ function ejecucionMaquinas(paramOpcion, paramCreditos) {
             return paramCreditos;
     }
 }
+//falta resolver la clase Cliente-Tesorersia-Casino para poder probar esto.
+var summer1 = new tragamonedaSummer_1.TragamonedaSummer(0, 10000, 100);
+var winter1 = new TragamonedaWinter_1.TragamonedaWinter(1, 10000);
+var ruleta1 = new ruleta_1.Ruleta(2, 10000);
+//los dados no necesitan parametro, y alteran el orden.
+var crap1 = new crap_1.Crap(0, 3, 10000);
+//preguntamos la cantidad de plata que posee el cliente.
+function cantDineroCliente() {
+    var readlineSync = require('readline-sync');
+    var cantDineroIngresado = readlineSync.questionInt('Ingrese la cantidad de dinero que va a convertir a credito: ');
+    if (cantDineroIngresado < 1) {
+        console.log("Por favor ingrese un numero valido.");
+        cantDineroCliente();
+    }
+    return cantDineroIngresado;
+}
+var cliente1 = new cliente_1.Cliente(cantDineroCliente());
+//instanciamos la clase Casino.
+var casino777 = new casino_1.Casino(100000, 0.5, cliente1, summer1, winter1, ruleta1, crap1);
+//convertimos todos el dinero del cliente en credito. 
+//esto quedo re feo
+cliente1.setCreditos(casino777.comprarCreditos(cliente1.getDinero()));
+cliente1.setDinero(0);
+cliente1.setCreditos(menuCentral(cliente1.getCreditos()));
+//UNA VEZ TERMINADO DE JUGAR RECUPERAMOS EL DINERO.
+cliente1.setDinero(casino777.intercambiarCreditos(cliente1.getCreditos()));
+//FALTA HACER EL DESCUENTO Y SUMA A LOS JUEGOS.

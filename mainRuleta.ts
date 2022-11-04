@@ -31,7 +31,7 @@ export function menuRuleta(paramCreditos: number): number {
             //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
             console.log("numero erroneo Intente nuevamente");
             console.clear();//para limpiar la pantalla
-            menuRuleta(paramCreditos);
+            return menuRuleta(paramCreditos);
         } else if(opcionDeseada === 14) {
             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
             console.log("Usted se retira con " + paramCreditos + " creditos.");
@@ -39,7 +39,7 @@ export function menuRuleta(paramCreditos: number): number {
             return paramCreditos;
         } else {
             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-            menuRuleta(ejecucionApuestas(opcionDeseada, paramCreditos));
+            return menuRuleta(ejecucionApuestas(opcionDeseada, paramCreditos));
         }
     } else {
         console.log("Usted ya no posee creditos");

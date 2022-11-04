@@ -14,7 +14,7 @@ function mensajesMenuSummer(): void {
 export function menuSummer(paramCreditos: number): number {
     let readlineSync = require('readline-sync');
     //chequeamos si la persona tiene creditos suficientes para usar la maquina.
-    if(paramCreditos > summer.getApuestaMinima()) {
+    if(paramCreditos >= summer.getApuestaMinima()) {
         console.log("Usted posee "+ paramCreditos + " creditos.");
         mensajesMenuSummer();
         let opcionDeseada: number = readlineSync.questionInt('Ingrese la opcion deseada ');
@@ -22,7 +22,7 @@ export function menuSummer(paramCreditos: number): number {
             //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
             console.log("numero erroneo Intente nuevamente");
             console.clear();//para limpiar la pantalla
-            menuSummer(paramCreditos);
+            return menuSummer(paramCreditos);
         } else if(opcionDeseada === 3) {
             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
             console.log("Usted se retira con " + paramCreditos + " creditos.");
@@ -30,7 +30,7 @@ export function menuSummer(paramCreditos: number): number {
             return paramCreditos;
         } else {
             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-            menuSummer(ejecucionApuestas(opcionDeseada, paramCreditos));
+            return menuSummer(ejecucionApuestas(opcionDeseada, paramCreditos));
         }
     } else {
         console.log("Usted ya no posee creditos suficientes");
@@ -51,7 +51,7 @@ function ejecucionApuestas(paramOpcion: number, paramCreditos: number): number {
             resultadoApuesta = summer.apuesta(creditosApostados);
             summer.mostrarResultado();
             console.log(mensajeResultado(resultadoApuesta));
-            totalCreditos+= resultadoApuesta;
+            totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
 
@@ -74,6 +74,7 @@ function ejecucionApuestas(paramOpcion: number, paramCreditos: number): number {
 function cantApostada(paramCreditos: number): number {
     let readlineSync = require('readline-sync');
     let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
+    //comprobar apuesta minima, no cero
     if(cantApuesta < 0 || cantApuesta > paramCreditos) {
         console.log("Cantidad incorrecta, intente nuevamente");
         cantApostada(paramCreditos);
