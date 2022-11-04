@@ -44,12 +44,14 @@ export class Casino {
         this.valorCreditos = paramValorCredito;
     }
 
+    //ahora es cliente compra creditos y debe relacionarse con el cliente.
     public comprarCreditos(paramDinero: number): number {
         let creditosSalida: number = paramDinero / this.valorCreditos;
         this.capitalGeneral += paramDinero;
         return creditosSalida; 
     }
 
+    //cliente convierte creditos y debe relacionarse con el cliente.
     public intercambiarCreditos(paramCreditos: number): number {
         let dineroSalida: number = paramCreditos * this.valorCreditos;
         this.capitalGeneral -= dineroSalida;
