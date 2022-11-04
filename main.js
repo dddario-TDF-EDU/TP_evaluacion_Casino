@@ -8,7 +8,7 @@ var casino_1 = require("./casino-poo/casino");
 var TragamonedaWinter_1 = require("./casino-poo/TragamonedaWinter");
 var ruleta_1 = require("./casino-poo/ruleta");
 var crap_1 = require("./casino-poo/crap");
-function menuCentral(paramCreditos) {
+function menuCentral(paramCreditos, pSummer, pWinter, pRuleta, pCrap) {
     console.log("Bienvenido al casino RXXXX");
     console.log("Usted posee " + paramCreditos + " creditos.");
     if (paramCreditos > 0) {
@@ -20,7 +20,7 @@ function menuCentral(paramCreditos) {
             console.log("numero erroneo Intente nuevamente");
             console.clear(); //para limpiar la pantalla
             //debe ser un return??
-            menuCentral(paramCreditos);
+            return menuCentral(paramCreditos, pSummer, pWinter, pRuleta, pCrap);
         }
         else if (opcionDeseada === 5) {
             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
@@ -31,7 +31,7 @@ function menuCentral(paramCreditos) {
         else {
             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
             //debe ser un return??
-            menuCentral(ejecucionMaquinas(opcionDeseada, paramCreditos));
+            return menuCentral(ejecucionMaquinas(opcionDeseada, paramCreditos, pSummer, pWinter, pRuleta, pCrap), pSummer, pWinter, pRuleta, pCrap);
         }
     }
     else {
@@ -48,12 +48,12 @@ function mensajesMenuCentral() {
     console.log("5 _ Salir.");
     console.log("");
 }
-function ejecucionMaquinas(paramOpcion, paramCreditos) {
+function ejecucionMaquinas(paramOpcion, paramCreditos, pSummer, pWinter, pRuleta, pCrap) {
     switch (paramOpcion) {
         case 1:
-            return (0, mainSummer_1.menuSummer)(paramCreditos);
+            return (0, mainSummer_1.menuSummer)(paramCreditos, pSummer);
         case 3:
-            return (0, mainRuleta_1.menuRuleta)(paramCreditos);
+            return (0, mainRuleta_1.menuRuleta)(paramCreditos, pRuleta);
         default:
             return paramCreditos;
     }
@@ -81,7 +81,7 @@ var casino777 = new casino_1.Casino(100000, 0.5, cliente1, summer1, winter1, rul
 //esto quedo re feo
 cliente1.setCreditos(casino777.comprarCreditos(cliente1.getDinero()));
 cliente1.setDinero(0);
-cliente1.setCreditos(menuCentral(cliente1.getCreditos()));
+cliente1.setCreditos(menuCentral(cliente1.getCreditos(), summer1, winter1, ruleta1, crap1));
 //UNA VEZ TERMINADO DE JUGAR RECUPERAMOS EL DINERO.
 cliente1.setDinero(casino777.intercambiarCreditos(cliente1.getCreditos()));
 //FALTA HACER EL DESCUENTO Y SUMA A LOS JUEGOS.

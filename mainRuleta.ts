@@ -1,7 +1,5 @@
 import { Ruleta } from "./casino-poo/ruleta";
 
-let ruletaLoca: Ruleta = new Ruleta(0, 100000);
-
 function mensajesMenuRuleta(): void {
     console.log("Bienvenido a la ruleta");
     console.log("opciones: ");
@@ -21,9 +19,9 @@ function mensajesMenuRuleta(): void {
     console.log("14 _ Salir");
 }
 
-export function menuRuleta(paramCreditos: number): number {
+export function menuRuleta(paramCreditos: number, pRuleta: Ruleta): number {
     let readlineSync = require('readline-sync');
-    if(paramCreditos > 0) {
+    if(paramCreditos > pRuleta.getApuestaMinima()) {
         console.log("Usted posee "+ paramCreditos + " creditos.")
         mensajesMenuRuleta();
         let opcionDeseada: number = readlineSync.questionInt('Ingrese la opcion deseada ');
@@ -31,7 +29,7 @@ export function menuRuleta(paramCreditos: number): number {
             //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
             console.log("numero erroneo Intente nuevamente");
             console.clear();//para limpiar la pantalla
-            return menuRuleta(paramCreditos);
+            return menuRuleta(paramCreditos, pRuleta);
         } else if(opcionDeseada === 14) {
             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
             console.log("Usted se retira con " + paramCreditos + " creditos.");
@@ -39,120 +37,120 @@ export function menuRuleta(paramCreditos: number): number {
             return paramCreditos;
         } else {
             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-            return menuRuleta(ejecucionApuestas(opcionDeseada, paramCreditos));
+            return menuRuleta(ejecucionApuestas(opcionDeseada, paramCreditos, pRuleta), pRuleta);
         }
     } else {
         console.log("Usted ya no posee creditos");
         console.log("Gracias por jugar, esperamos su regreso.")
-        return 0;
+        return paramCreditos;
     }
 }
 
 
-function ejecucionApuestas(paramOpcion: number, paramCreditos: number): number {
+function ejecucionApuestas(paramOpcion: number, paramCreditos: number, pRuleta: Ruleta): number {
     let resultadoApuesta: number = 0;
-    let totalApuesta: number = cantApostada(paramCreditos);
+    let totalApuesta: number = cantApostada(paramCreditos, pRuleta);
     let totalCreditos: number = paramCreditos - totalApuesta;
     switch(paramOpcion) {
         case 1:
-            resultadoApuesta = ruletaLoca.apuestaNroUnico(totalApuesta, numeroDeRuletaElegido());
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaNroUnico(totalApuesta, numeroDeRuletaElegido());
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta));
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
 
         case 2:
-            resultadoApuesta = ruletaLoca.apuestaPrimeraDocena(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaPrimeraDocena(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
         
         case 3:
-            resultadoApuesta = ruletaLoca.apuestaSegundaDocena(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaSegundaDocena(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
 
         case 4:
-            resultadoApuesta = ruletaLoca.apuestaTerceraDocena(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaTerceraDocena(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
 
         case 5:
-            resultadoApuesta = ruletaLoca.apuestaPrimeraColumna(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaPrimeraColumna(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
 
         case 6:
-            resultadoApuesta = ruletaLoca.apuestaSegundaColumna(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaSegundaColumna(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
             
         case 7:
-            resultadoApuesta = ruletaLoca.apuestaTerceraColumna(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaTerceraColumna(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
         
         case 8:
-            resultadoApuesta = ruletaLoca.apuestaPrimeraMitad(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaPrimeraMitad(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
         
         case 9:
-            resultadoApuesta = ruletaLoca.apuestaSegundaMitad(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaSegundaMitad(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
         
         case 10:
-            resultadoApuesta = ruletaLoca.apuestaRojas(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaRojas(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
         
         case 11:
-            resultadoApuesta = ruletaLoca.apuestaNegras(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaNegras(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
 
         case 12:
-            resultadoApuesta = ruletaLoca.apuestaPares(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaPares(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
             return totalCreditos;
         
         case 13:
-            resultadoApuesta = ruletaLoca.apuestaImpares(totalApuesta);
-            console.log("El resultado fue: " + ruletaLoca.getResultadoRuleta());
+            resultadoApuesta = pRuleta.apuestaImpares(totalApuesta);
+            console.log("El resultado fue: " + pRuleta.getResultadoRuleta());
             console.log(mensajeResultado(resultadoApuesta))
             totalCreditos += resultadoApuesta;
             pausaParaLeer();
@@ -171,18 +169,18 @@ function numeroDeRuletaElegido(): number {
     let numeroDeseado: number = readlineSync.questionInt('Ingrese el numero al que desea apostar ');
     if(numeroDeseado < 0 || numeroDeseado > 36) {
         console.log("Numero incorrecto, intente nuevamente");
-        numeroDeRuletaElegido();
+        return numeroDeRuletaElegido();
     }
 
     return numeroDeseado;
 }
 
-function cantApostada(paramCreditos: number): number {
+function cantApostada(paramCreditos: number, pRuleta: Ruleta): number {
     let readlineSync = require('readline-sync');
     let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
-    if(cantApuesta < 0 || cantApuesta > paramCreditos) {
+    if((cantApuesta < 0 || cantApuesta > paramCreditos) && cantApuesta < pRuleta.getApuestaMinima()) {
         console.log("Cantidad incorrecta, intente nuevamente");
-        cantApostada(paramCreditos);
+        return cantApostada(paramCreditos, pRuleta);
     }
 
     return cantApuesta;

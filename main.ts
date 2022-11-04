@@ -8,7 +8,7 @@ import { TragamonedaWinter } from "./casino-poo/TragamonedaWinter";
 import { Ruleta } from "./casino-poo/ruleta";
 import { Crap } from "./casino-poo/crap";
 
-function menuCentral(paramCreditos: number): number {
+function menuCentral(paramCreditos: number, pSummer: TragamonedaSummer, pWinter: TragamonedaWinter, pRuleta: Ruleta, pCrap: Crap): number {
     console.log("Bienvenido al casino RXXXX");
     console.log("Usted posee " + paramCreditos + " creditos.");
     if(paramCreditos > 0) {
@@ -20,7 +20,7 @@ function menuCentral(paramCreditos: number): number {
             console.log("numero erroneo Intente nuevamente");
             console.clear();//para limpiar la pantalla
             //debe ser un return??
-            return menuCentral(paramCreditos);
+            return menuCentral(paramCreditos, pSummer, pWinter, pRuleta, pCrap);
         } else if(opcionDeseada === 5) {
             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
             console.log("Usted se retira con " + paramCreditos + " creditos.");
@@ -29,7 +29,7 @@ function menuCentral(paramCreditos: number): number {
         } else {
             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
             //debe ser un return??
-            return menuCentral(ejecucionMaquinas(opcionDeseada, paramCreditos));
+            return menuCentral(ejecucionMaquinas(opcionDeseada, paramCreditos, pSummer, pWinter, pRuleta, pCrap), pSummer, pWinter, pRuleta, pCrap);
         }
     } else {
         console.log("Usted ya no posee creditos suficientes, gracias por jugar vuelva pronto.");
@@ -48,12 +48,12 @@ function mensajesMenuCentral(): void {
     console.log("");
 }
 
-function ejecucionMaquinas(paramOpcion: number, paramCreditos: number): number {
+function ejecucionMaquinas(paramOpcion: number, paramCreditos: number, pSummer: TragamonedaSummer, pWinter: TragamonedaWinter, pRuleta: Ruleta, pCrap: Crap): number {
     switch(paramOpcion){
         case 1:
-            return menuSummer(paramCreditos);
+            return menuSummer(paramCreditos, pSummer);
         case 3:
-            return menuRuleta(paramCreditos);
+            return menuRuleta(paramCreditos, pRuleta);
         default:
             return paramCreditos;
     }
@@ -91,7 +91,7 @@ let casino777: Casino = new Casino(100000, 0.5, cliente1, summer1, winter1, rule
 //esto quedo re feo
 cliente1.setCreditos(casino777.comprarCreditos(cliente1.getDinero()));
 cliente1.setDinero(0);
-cliente1.setCreditos(menuCentral(cliente1.getCreditos()));
+cliente1.setCreditos(menuCentral(cliente1.getCreditos(), summer1, winter1, ruleta1, crap1));
 //UNA VEZ TERMINADO DE JUGAR RECUPERAMOS EL DINERO.
 cliente1.setDinero(casino777.intercambiarCreditos(cliente1.getCreditos()))
 
