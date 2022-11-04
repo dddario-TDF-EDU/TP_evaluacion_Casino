@@ -96,3 +96,5 @@ cliente1.setCreditos(menuCentral(cliente1.getCreditos(), summer1, winter1, rulet
 cliente1.setDinero(casino777.intercambiarCreditos(cliente1.getCreditos()))
 
 //FALTA HACER EL DESCUENTO Y SUMA A LOS JUEGOS.
+
+console.log("hola")
