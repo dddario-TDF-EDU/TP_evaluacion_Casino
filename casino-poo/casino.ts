@@ -1,9 +1,6 @@
 import { Cliente } from "./cliente";
 import { Juego } from "./juego";
-import { TragamonedaSummer } from "./tragamonedaSummer"
-import { TragamonedaWinter } from "./TragamonedaWinter"
-import { Ruleta } from "./ruleta"
-import { Crap } from "./crap";
+
 
 export class Casino {
     private juegos: Juego[]
@@ -45,19 +42,18 @@ export class Casino {
     }
 
     //ahora es cliente compra creditos y debe relacionarse con el cliente.
-    public comprarCreditos(paramDinero: number): number {
-        let creditosSalida: number = paramDinero / this.valorCreditos;
-        this.capitalGeneral += paramDinero;
-        return creditosSalida; 
+    public convertirDineroCliente(): void {
+        let creditosSalida: number = this.cliente.getCreditos() / this.valorCreditos;
+        this.cliente.setCreditos(creditosSalida);
     }
 
     //cliente convierte creditos y debe relacionarse con el cliente.
-    public intercambiarCreditos(paramCreditos: number): number {
-        let dineroSalida: number = paramCreditos * this.valorCreditos;
-        this.capitalGeneral -= dineroSalida;
-        return dineroSalida;
+    public intercambiarCreditos(): void {
+        let dineroSalida: number = this.cliente.getCreditos() * this.valorCreditos;
+        this.cliente.setDinero(dineroSalida);
     }
 
+    //¿ES correcto usar esos parametros?  total estoy usando valores q ya poseo.
     public menuCentral(paramCreditos: number, pJuegos: Juego[]): number {
         console.log("Bienvenido al casino RXXXX");
         console.log("Usted posee " + paramCreditos + " creditos.");
