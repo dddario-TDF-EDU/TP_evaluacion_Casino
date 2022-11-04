@@ -1,8 +1,12 @@
 Reglas del Craps
-En el Craps, los jugadores se turnan para ocupan el lugar de tirador y lanzar dos dados de seis caras sobre la mesa. El objetivo principal del juego es hacer una apuesta exitosa sobre los resultados de las tiradas, ya sea sobre la siguiente o sobre un resultado específico que sucederá antes de que finalice la ronda.
-Las partidas de Craps se dividen en dos secciones: la salida y el punto. La tirada de salida es la primera de la ronda. Si sale un 7 o un 11, se conoce como natural y si sale un 2, un 3 o un 12, se conoce como “crapping out”. En ambos casos, la ronda termina allí.
+En el Craps, los jugadores se turnan para ocupan el lugar de tirador y lanzar dos dados de seis caras sobre la mesa. 
+El objetivo principal del juego es hacer una apuesta exitosa sobre los resultados de las tiradas,
+ya sea sobre la siguiente o sobre un resultado específico que sucederá antes de que finalice la ronda.
+Las partidas de Craps se dividen en dos secciones: la salida y el punto. La tirada de salida es la primera de la ronda.
+Si sale un 7 o un 11, se conoce como natural y si sale un 2, un 3 o un 12, se conoce como “crapping out”.En ambos casos, la ronda termina allí.
 En este caso, la ronda continúa hasta sacar el punto o un 7. Si no sale ninguno, el jugador debe volver a tirar hasta sacar el punto o un 7.
-Para mostrar en qué etapa se encuentra la ronda, se coloca un indicador sobre la mesa. Antes de la tirada de salida, este indicador muestra “Off” (inactivo). Luego de establecer un punto, el indicador se traslada al siguiente número relevante de la mesa y se lo da vuelta para que muestre la palabra “On” (activo).
+Para mostrar en qué etapa se encuentra la ronda, se coloca un indicador sobre la mesa. Antes de la tirada de salida,este indicador muestra “Off” (inactivo). 
+Luego de establecer un punto, el indicador se traslada al siguiente número relevante de la mesa y se lo da vuelta para que muestre la palabra “On” (activo).
 El jugador ocupa el lugar de tirador hasta que pierde la ronda. En la tirada de salida, el jugador gana la ronda si saca un natural y la pierde si saca un “crap out”. En las tiradas de puntos, el jugador gana la ronda si saca el punto y la pierde si saca un 7, lo que se conoce como “siete fuera”. El siguiente tirador es el jugador ubicado a la izquierda del tirador de turno.
 A continuación, se muestra una mesa de Craps estándar. Para hacer una apuesta se deben colocar las fichas en el sector correspondiente de la mesa.
 
@@ -12,7 +16,8 @@ Existe una gran cantidad de apuestas posibles en una ronda de Craps. Las siguien
 Apuesta de línea de pase
 
 Se trata, básicamente, de apostar a que el tirador ganará la ronda. El tirador de turno debe hacer una apuesta de línea de pase o barra de no pase (la cual se explica a continuación) en cada ronda. Para el resto de los jugadores esta apuesta es opcional.
-Para hacer una apuesta de línea de pase se deben colocar las fichas en el sector de la mesa marcado como “Línea de pase”. Estas apuestas solo se pueden realizar antes de la tirada de salida y ofrecen un pago de 1:1.
+Para hacer una apuesta de línea de pase se deben colocar las fichas en el sector de la mesa marcado como “Línea de pase”. 
+Estas apuestas solo se pueden realizar antes de la tirada de salida y ofrecen un pago de 1:1.
 Las apuestas de línea de pase funcionan de la siguiente manera, en función de la tirada de salida:
 Si sale un 7 o un 11 (natural), la apuesta gana.
 Si sale un 2, un 3 o un 12 (crapping out), la apuesta pierde.
@@ -20,38 +25,63 @@ Si se saca cualquier otro número (4, 5, 6, 8, 9 o 10) y se establece un punto, 
 
 Apuesta de barra de no pase
 
-Esta es la apuesta contraria a la anterior, ya que se apuesta a que el tirador perderá la ronda. El tirador debe hacer este tipo de apuesta si no quiere hacer la de línea de pase. Para el resto de los jugadores, esta apuesta es opcional.
-Para hacer una apuesta de barra de no pase se deben colocar las fichas en el sector de la mesa marcado como “Barra de no pase”. Estas apuestas solo se pueden realizar antes de la tirada de salida y ofrecen un pago de 1:1.
+Esta es la apuesta contraria a la anterior, ya que se apuesta a que el tirador perderá la ronda.
+El tirador debe hacer este tipo de apuesta si no quiere hacer la de línea de pase.
+Para el resto de los jugadores, esta apuesta es opcional.
+Para hacer una apuesta de barra de no pase se deben colocar las fichas en el sector de la mesa marcado como “Barra de no pase”.
+Estas apuestas solo se pueden realizar antes de la tirada de salida y ofrecen un pago de 1:1.
 Las apuestas de barra de no pase funcionan de la siguiente manera, en función de la tirada de salida:
 Si sale un 2 o un 3, la apuesta gana.
 Si sale un 7 o un 11, la apuesta pierde.
 Si sale un 12, hay empate. Esto significa que la apuesta no gana ni pierde sino que se devuelve al jugador.
 Si se saca cualquier otro número (4, 5, 6, 8, 9 o 10) y se establece un punto, la apuesta gana si sale un 7 y pierde si sale el punto nuevamente.
-Si se establece un punto, las apuestas de barra de no pase se pueden reducir o eliminar de la mesa. Hacer una apuesta de barra de no pase también se conoce como “jugarle al lado oscuro” y en general está mal visto por los otros jugadores del casino.
+Si se establece un punto, las apuestas de barra de no pase se pueden reducir o eliminar de la mesa. 
+Hacer una apuesta de barra de no pase también se conoce como “jugarle al lado oscuro” y en general está mal visto por los otros jugadores del casino.
 
 Apuesta de gabela a favor
 
-Si se establece un punto, el jugador puede hacer una apuesta de gabela a favor a que el punto saldrá nuevamente antes que el 7. Esta apuesta ofrece un pago de 2:1 si el punto es un 4 o un 10, 3:2 si es un 5 o un 9 y 6:5 si es un 6 o un 8.
-Solo se pueden hacer apuestas de gabela a favor si el jugador ya hizo una apuesta de línea de pase. En ocasiones, estas apuestas tienen un límite de tres veces el monto apostado en línea de pase si el punto es un 4 o un 10, cuatro veces si el punto es un 5 o un 9 y cinco veces si el punto es un 6 o un 8.
-Para hacer una apuesta de gabela a favor se deben colocar las fichas en el sector de la mesa marcado como “Línea de pase”. El jugador puede reducir o eliminar de la mesa este tipo de apuestas, además de declararlas “inactivas” (si el resultado se establece mientras la apuesta esta “inactiva”, se le devuelve el valor al jugador).
+Si se establece un punto, el jugador puede hacer una apuesta de gabela a favor a que el punto saldrá nuevamente antes que el 7. 
+Esta apuesta ofrece un pago de 2:1 si el punto es un 4 o un 10, 3:2 si es un 5 o un 9 y 6:5 si es un 6 o un 8.
+Solo se pueden hacer apuestas de gabela a favor si el jugador ya hizo una apuesta de línea de pase. 
+En ocasiones, estas apuestas tienen un límite de tres veces el monto apostado en línea de pase si el punto es un 4 o un 10, 
+cuatro veces si el punto es un 5 o un 9 y cinco veces si el punto es un 6 o un 8.
+Para hacer una apuesta de gabela a favor se deben colocar las fichas en el sector de la mesa marcado como “Línea de pase”. 
+El jugador puede reducir o eliminar de la mesa este tipo de apuestas, además de declararlas “inactivas” 
+(si el resultado se establece mientras la apuesta esta “inactiva”, se le devuelve el valor al jugador).
 
 Apuesta de gabela en contra
 
-Esta es la apuesta contraria a la de gabela a favor, ya que se apuesta a que saldrá un 7 antes que el punto. Las apuestas de gabela en contra se pueden hacer únicamente si el jugador ya hizo una apuesta de barra de no pase y en general tienen un valor máximo especificado por la mesa. Ofrece pagos de 0,5:1 por el 4 y el 10, 0,66:1 por el 5 y el 9 y 0,83:1 por el 6 y el 8.
-Para hacer una apuesta de gabela en contra se deben colocar las fichas en el sector de la mesa marcado como “Barra de no pase”. Al igual que las apuestas de gabela a favor, el jugador puede reducirlas o eliminarlas de la mesa, además de declararlas “inactivas”. Las apuestas de gabela en contra son un tabú en los casinos.
+Esta es la apuesta contraria a la de gabela a favor, ya que se apuesta a que saldrá un 7 antes que el punto.
+Las apuestas de gabela en contra se pueden hacer únicamente si el jugador ya hizo una apuesta de barra de no pase y en general tienen un valor máximo especificado por la mesa.
+Ofrece pagos de 0,5:1 por el 4 y el 10, 0,66:1 por el 5 y el 9 y 0,83:1 por el 6 y el 8.
+Para hacer una apuesta de gabela en contra se deben colocar las fichas en el sector de la mesa marcado como “Barra de no pase”. 
+Al igual que las apuestas de gabela a favor, el jugador puede reducirlas o eliminarlas de la mesa, además de declararlas “inactivas”.
+Las apuestas de gabela en contra son un tabú en los casinos.
 
 Apuesta al número por venir
 
-Las apuestas al número por venir se hacen después de establecer un punto y se las considera iguales a las de línea de pase. Esto significa que si en cualquier tirada luego de la de salida sale un 7 o un 11, la apuesta gana; si sale un 2, un 3 o un 12, la apuesta pierde; y si sale cualquier otro número la apuesta ingresa a su propio punto, lo que se conoce como “Punto al venir”. En este caso, las apuestas al número por venir se pueden hacer de la misma manera que las de gabela a favor. Las apuestas al número por venir ofrecen un pago de 1:1.
-En las apuestas al número por venir, puede ocurrir que finalice la ronda del tirador pero que el resultado del punto al venir todavía no se haya establecido. Por ejemplo, en una tirada de punto el tirador puede sacar un 8 cuando el punto de ese jugador es 8 y el punto al venir es 5.
-Si esto ocurre, las apuestas al número por venir se pasan a la ronda siguiente y continúan en juego hasta que el siguiente tirador (o cualquier otro tirador que juegue después, en caso de ser necesario) saca el punto al venir o un 7.
-Las apuestas de gabela a favor también se pasan a la ronda siguiente, aunque quedan como “inactivas” para la tirada de salida del siguiente jugador. Esto significa que si sale el punto al venir o un 7, la apuesta de gabela a favor se devuelve al jugador. Si el siguiente tirador saca cualquier otro valor, la apuesta de gabela a favor vuelve al juego.
-Para hacer una apuesta al número por venir se deben colocar las fichas en el sector de la mesa marcado como “Al número por venir”. Si se establece un punto al venir, el crupier mueve las fichas al casillero con el número correspondiente y si se hace una apuesta de gabela a favor, todas las fichas se colocan encima de la pila de apuestas al número por venir ubicada ligeramente fuera del centro. El jugador puede reducir o eliminar las apuestas al número por venir de la mesa, además de declararlas “inactivas”.
+Las apuestas al número por venir se hacen después de establecer un punto y se las considera iguales a las de línea de pase.
+Esto significa que si en cualquier tirada luego de la de salida sale un 7 o un 11, la apuesta gana; si sale un 2, un 3 o un 12, 
+la apuesta pierde; y si sale cualquier otro número la apuesta ingresa a su propio punto, lo que se conoce como “Punto al venir”.
+En este caso, las apuestas al número por venir se pueden hacer de la misma manera que las de gabela a favor. Las apuestas al número por venir ofrecen un pago de 1:1.
+En las apuestas al número por venir, puede ocurrir que finalice la ronda del tirador pero que el resultado del punto al venir todavía no se haya establecido.
+Por ejemplo, en una tirada de punto el tirador puede sacar un 8 cuando el punto de ese jugador es 8 y el punto al venir es 5.
+Si esto ocurre, las apuestas al número por venir se pasan a la ronda siguiente y continúan en juego hasta que el siguiente tirador
+(o cualquier otro tirador que juegue después, en caso de ser necesario) saca el punto al venir o un 7.
+Las apuestas de gabela a favor también se pasan a la ronda siguiente, aunque quedan como “inactivas” para la tirada de salida del siguiente jugador. 
+Esto significa que si sale el punto al venir o un 7, la apuesta de gabela a favor se devuelve al jugador. 
+Si el siguiente tirador saca cualquier otro valor, la apuesta de gabela a favor vuelve al juego.
+Para hacer una apuesta al número por venir se deben colocar las fichas en el sector de la mesa marcado como “Al número por venir”.
+Si se establece un punto al venir, el crupier mueve las fichas al casillero con el número correspondiente y si se hace una apuesta de gabela a favor, 
+todas las fichas se colocan encima de la pila de apuestas al número por venir ubicada ligeramente fuera del centro. 
+El jugador puede reducir o eliminar las apuestas al número por venir de la mesa, además de declararlas “inactivas”.
 
 Apuestas contra el número por venir
 
-Es la apuesta contraria a la del número por venir. Esto significa que si en cualquier tirada luego de la tirada de salida sale un 7 o un 11, la apuesta gana; si sale un 2 o un 3, la apuesta pierde; si sale un 12 empata y si sale cualquier otro número ingresa a su propio punto, lo que se conoce como “Punto al no venir”. En esta caso, las apuestas contra el número por venir se pueden hacer de la misma manera que las de gabela en contra. Las apuestas contra el número por venir ofrecen un pago de 1:1.
-Para hacer una apuesta contra el número por venir se deben colocar las fichas en el sector de la mesa marcado como “Contra el número por venir”. Si se establece un punto al no venir, el crupier mueve las fichas al casillero con el número correspondiente y si se hace una apuesta de gabela en contra, todas las fichas se colocan encima de la pila de apuestas contra el número por venir ubicada ligeramente fuera del centro. El jugador puede reducir o eliminar las apuestas contra el número por venir de la mesa, además de declararlas “inactivas”.
+Es la apuesta contraria a la del número por venir. Esto significa que si en cualquier tirada luego de la tirada de salida sale un 7 o un 11, la apuesta gana;
+si sale un 2 o un 3, la apuesta pierde; si sale un 12 empata y si sale cualquier otro número ingresa a su propio punto, lo que se conoce como “Punto al no venir”. En esta caso, las apuestas contra el número por venir se pueden hacer de la misma manera que las de gabela en contra. Las apuestas contra el número por venir ofrecen un pago de 1:1.
+Para hacer una apuesta contra el número por venir se deben colocar las fichas en el sector de la mesa marcado como “Contra el número por venir”. 
+Si se establece un punto al no venir, el crupier mueve las fichas al casillero con el número correspondiente y si se hace una apuesta de gabela en contra, todas las fichas se colocan encima de la pila de apuestas contra el número por venir ubicada ligeramente fuera del centro. El jugador puede reducir o eliminar las apuestas contra el número por venir de la mesa, además de declararlas “inactivas”.
 
 Apuestas a varias tiradas
 Apuesta en sitio
@@ -78,28 +108,42 @@ Son apuestas al resultado de la siguiente tirada del jugador. En general, los re
 
 Apuesta de campo
 
-Se apuesta a que en la próxima tirada saldrá alguno de los números en el “campo” (2, 3, 4, 9, 10, 11 o 12). En general ofrece un pago de 2:1 si sale un 2 o un 12, y 1:1 si sale cualquier otro número. Para hacer este tipo de apuestas se deben colocar las fichas en el sector de la mesa marcado como “Campo”.
+Se apuesta a que en la próxima tirada saldrá alguno de los números en el “campo” (2, 3, 4, 9, 10, 11 o 12).
+En general ofrece un pago de 2:1 si sale un 2 o un 12, y 1:1 si sale cualquier otro número. 
+Para hacer este tipo de apuestas se deben colocar las fichas en el sector de la mesa marcado como “Campo”.
 
 Apuestas C&E (Craps once)
 
-En este tipo de apuestas, el jugador apuesta la mitad a que en la siguiente tirada saldrá algunos de los números “crap” (2, 3 o 12) y la otra mitad a que saldrá un 11. Este tipo de apuesta generalmente ofrece un pago de 3:1 por los números “crap” y 7:1 por el 11. Para hacer una apuesta C&E se deben colocar dos juegos de fichas de igual valor en los círculos adyacentes marcados como C y E.
+En este tipo de apuestas, el jugador apuesta la mitad a que en la siguiente tirada saldrá algunos de los números “crap” (2, 3 o 12)
+y la otra mitad a que saldrá un 11. Este tipo de apuesta generalmente ofrece un pago de 3:1 por los números “crap” y 7:1 por el 11.
+Para hacer una apuesta C&E se deben colocar dos juegos de fichas de igual valor en los círculos adyacentes marcados como C y E.
 
 Apuesta al cuerno
 
-En este tipo de apuestas, el jugador apuesta cuatro montos iguales a que en la siguiente tirada saldrá un 2, un 3, un 11 y un 12. Esta apuesta en general ofrece un pago de 27:4 por el 2 y el 12 y 3:1 por el 3 y el 11.
-Los jugadores también pueden hacer una apuesta al cuerno alta, en la que se agrega un quinto monto de igual valor a los otros cuatro y también se apuesta a uno de los números específicos. Por ejemplo, una apuesta al cuerno alta de €5 puede componerse de €1 al 2, al 3 y al 12 y €2 al 11.
+En este tipo de apuestas, el jugador apuesta cuatro montos iguales a que en la siguiente tirada saldrá un 2, un 3, un 11 y un 12. 
+Esta apuesta en general ofrece un pago de 27:4 por el 2 y el 12 y 3:1 por el 3 y el 11.
+Los jugadores también pueden hacer una apuesta al cuerno alta, en la que se agrega un quinto monto de igual valor a los otros cuatro 
+y también se apuesta a uno de los números específicos. 
+Por ejemplo, una apuesta al cuerno alta de €5 puede componerse de €1 al 2, al 3 y al 12 y €2 al 11.
 
 Apuesta mundial o “whirl”
 
-Se trata de un tipo de apuesta al cuerno que agrega una quinta apuesta a que en la siguiente tirada saldrá un 7. Es básicamente una apuesta de garantía en la que el jugador obtiene un empate o “push” y se le reintegra el monto total apostado si sale un 7. Esta apuesta en general ofrece un pago de 26:5 por el 2 y el 12 y 11:5 por el 3 y el 11.
+Se trata de un tipo de apuesta al cuerno que agrega una quinta apuesta a que en la siguiente tirada saldrá un 7. 
+Es básicamente una apuesta de garantía en la que el jugador obtiene un empate o “push” y se le reintegra el monto total apostado si sale un 7. 
+Esta apuesta en general ofrece un pago de 26:5 por el 2 y el 12 y 11:5 por el 3 y el 11.
 
 Apuesta “hop”
 
-En este caso se apuesta tanto al total de la siguiente tirada como a la forma en que se logrará ese resultado. Este tipo de apuestas se dividen en “hops fáciles” (los números de los dos dados son diferentes) y “hops difíciles” (ambos números son iguales).
-Por ejemplo, una apuesta hop fácil al 10 es una apuesta a obtener un 6 y un 4 con los dos dados, mientras que una apuesta hop difícil al 10 requiere sacar dos 5. En general, las apuestas hop fáciles ofrecen un pago de 15:1 y las difíciles uno de 30:1.
+En este caso se apuesta tanto al total de la siguiente tirada como a la forma en que se logrará ese resultado. 
+Este tipo de apuestas se dividen en “hops fáciles” (los números de los dos dados son diferentes) y “hops difíciles” (ambos números son iguales).
+Por ejemplo, una apuesta hop fácil al 10 es una apuesta a obtener un 6 y un 4 con los dos dados, 
+mientras que una apuesta hop difícil al 10 requiere sacar dos 5. En general,
+ las apuestas hop fáciles ofrecen un pago de 15:1 y las difíciles uno de 30:1.
 
 Terminología del Craps
-Cuando juegue al Craps, notará que las tiradas del dado no se denominan según los valores y números que representan. En lugar de ello, muchas tiradas individuales tienen los nombres específicos que utiliza el crupier para referirse a ellas. Es importante acostumbrarse a estos nombres para poder seguir la ronda a medida que se juega, en especial porque muchos de ellos hacen referencia al resultado de apuestas específicas.
+Cuando juegue al Craps, notará que las tiradas del dado no se denominan según los valores y números que representan. 
+En lugar de ello, muchas tiradas individuales tienen los nombres específicos que utiliza el crupier para referirse a ellas. 
+Es importante acostumbrarse a estos nombres para poder seguir la ronda a medida que se juega, en especial porque muchos de ellos hacen referencia al resultado de apuestas específicas.
 
 
 

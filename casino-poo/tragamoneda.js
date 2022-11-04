@@ -1,18 +1,39 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 exports.__esModule = true;
 exports.Tragamoneda = void 0;
-var Tragamoneda = /** @class */ (function () {
-    function Tragamoneda() {
-        this.slot1 = this.numRandom();
-        this.slot2 = this.numRandom();
-        this.slot3 = this.numRandom();
+var juego_1 = require("./juego");
+var Tragamoneda = /** @class */ (function (_super) {
+    __extends(Tragamoneda, _super);
+    function Tragamoneda(paramID, paramCreditos, paramCantApuestaMinima) {
+        var _this = _super.call(this, paramID, paramCreditos, paramCantApuestaMinima) || this;
+        _this.slot1 = _this.numRandom();
+        _this.slot2 = _this.numRandom();
+        _this.slot3 = _this.numRandom();
+        return _this;
     }
     Tragamoneda.prototype.numRandom = function () {
-        return Math.floor(Math.random() * (3 - 0) + 1);
+        return Math.floor(Math.random() * (8 - 0) + 1);
     };
     Tragamoneda.prototype.apuesta = function (paramCreditos) {
         this.tiro();
-        var multiplicador = this.verifica() + this.verificaEscalera();
+        //metodo anterior
+        //let multiplicador: number = this.verifica() + this.verificaEscalera();
+        var multiplicador = this.verifica();
         var cantCreditos = paramCreditos * multiplicador;
         return cantCreditos;
     };
@@ -20,9 +41,6 @@ var Tragamoneda = /** @class */ (function () {
         this.slot1 = this.numRandom();
         this.slot2 = this.numRandom();
         this.slot3 = this.numRandom();
-        console.log(this.slot1);
-        console.log(this.slot2);
-        console.log(this.slot3);
     };
     Tragamoneda.prototype.verifica = function () {
         var multiplicador = 0;
@@ -33,43 +51,11 @@ var Tragamoneda = /** @class */ (function () {
         }
         return multiplicador;
     };
-    Tragamoneda.prototype.verificaEscalera = function () {
-        var mayor = this.buscarMayor();
-        var menor = this.buscarMenor();
-        if (mayor === 0 || menor === 0) {
-            return 0;
-        }
-        else if (mayor === 3 && menor === 1) {
-            return 5;
-        }
-        else {
-            return 5;
-        }
-    };
-    Tragamoneda.prototype.buscarMayor = function () {
-        if (this.slot1 > this.slot2 && this.slot1 > this.slot3) {
-            return 1;
-        }
-        if (this.slot2 > this.slot1 && this.slot2 > this.slot3) {
-            return 0;
-        }
-        if (this.slot3 > this.slot1 && this.slot3 > this.slot2) {
-            return 3;
-        }
-        return 0;
-    };
-    Tragamoneda.prototype.buscarMenor = function () {
-        if (this.slot1 < this.slot2 && this.slot1 < this.slot3) {
-            return 1;
-        }
-        if (this.slot2 < this.slot1 && this.slot2 < this.slot3) {
-            return 0;
-        }
-        if (this.slot3 < this.slot1 && this.slot3 < this.slot2) {
-            return 3;
-        }
-        return 0;
+    Tragamoneda.prototype.getResultado = function () {
+        console.log(this.slot1);
+        console.log(this.slot2);
+        console.log(this.slot3);
     };
     return Tragamoneda;
-}());
+}(juego_1.Juego));
 exports.Tragamoneda = Tragamoneda;

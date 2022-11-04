@@ -1,2 +1,6 @@
 *.json
 /node_modules
+*.js
+pruebasRaras.ts
+pruebasRaras.js
+casino-poo/tragamoneda.js

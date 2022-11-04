@@ -1,7 +1,6 @@
 export interface Ticket {
     getCreditos(): number;
-    getGanancias(): number;
-    getPerdidas(): number;
+    getBalance(): number;
     getCantidadApuestasTotales(): number;
     getCantidadApuestasGanadas(): number;
     getCantidadApuestasPerdidas(): number;

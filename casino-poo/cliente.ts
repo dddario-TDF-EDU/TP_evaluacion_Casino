@@ -1,25 +1,25 @@
 export class Cliente {
-    private money: number;
+    private dinero: number;
     private creditos: number;
 
-    constructor(paramMoney: number) {
-        this.money = paramMoney;
+    constructor(paramDinero: number) {
+        this.dinero = paramDinero;
         this.creditos = 0;
     }
 
-    public getMoney(): number {
-        return this.money;
+    public getDinero(): number {
+        return this.dinero;
     }
 
-    public setMoney(paramMoney: number) {
-        this.money = paramMoney;
+    public setDinero(paramDinero: number) {
+        this.dinero = paramDinero;
     }
 
     public getCreditos(): number {
         return this.creditos;
     }
 
-    public setCreditos(paramCreditos): void {
+    public setCreditos(paramCreditos: number): void {
         this.creditos = paramCreditos;
     }
 } 
