@@ -19,8 +19,8 @@ exports.Crap = void 0;
 var juego_1 = require("./juego");
 var Crap = /** @class */ (function (_super) {
     __extends(Crap, _super);
-    function Crap(paramDados, paramID, paramCreditos) {
-        var _this = _super.call(this, paramID, paramCreditos) || this;
+    function Crap(paramDados, paramNombre, paramID, paramCreditos) {
+        var _this = _super.call(this, paramID, paramNombre, paramCreditos) || this;
         _this.dados = paramDados;
         return _this;
     }

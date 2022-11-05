@@ -197,7 +197,7 @@ export class Ruleta extends Juego {
         console.log("14 _ Salir");
     }
     
-    public menuRuleta(paramCreditos: number, pRuleta: Ruleta): number {
+    public jugar(paramCreditos: number, pRuleta: Ruleta): number {
         let readlineSync = require('readline-sync');
         if(paramCreditos > pRuleta.getApuestaMinima()) {
             console.log("Usted posee "+ paramCreditos + " creditos.")
@@ -207,7 +207,7 @@ export class Ruleta extends Juego {
                 //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
                 console.log("numero erroneo Intente nuevamente");
                 console.clear();//para limpiar la pantalla
-                return this.menuRuleta(paramCreditos, pRuleta);
+                return this.jugar(paramCreditos, pRuleta);
             } else if(opcionDeseada === 14) {
                 //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
                 console.log("Usted se retira con " + paramCreditos + " creditos.");
@@ -215,7 +215,7 @@ export class Ruleta extends Juego {
                 return paramCreditos;
             } else {
                 //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-                return this.menuRuleta(this.ejecucionApuestas(opcionDeseada, paramCreditos, pRuleta), pRuleta);
+                return this.jugar(this.ejecucionApuestas(opcionDeseada, paramCreditos, pRuleta), pRuleta);
             }
         } else {
             console.log("Usted ya no posee creditos");

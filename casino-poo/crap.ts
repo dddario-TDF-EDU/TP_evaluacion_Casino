@@ -3,8 +3,8 @@ import { Juego } from "./juego";
 export class Crap extends Juego{
      private dados: number;
 
-    constructor(paramDados:number,paramID: number, paramCreditos: number) {
-        super(paramID, paramCreditos);
+    constructor(paramDados:number, paramNombre: string, paramID: number, paramCreditos: number) {
+        super(paramID, paramNombre, paramCreditos);
         this.dados = paramDados;
         
     }

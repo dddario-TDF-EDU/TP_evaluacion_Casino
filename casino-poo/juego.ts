@@ -55,7 +55,7 @@ export class Juego implements Ticket {
     }
 
     public jugar(paramCreditos: number, paramJuego: Juego): number {
-        console.log("tentativa de polimorfismo");
+        this.cantApuestasTotales++;
         return paramCreditos;
     }
 }

@@ -43,43 +43,74 @@ export class Casino {
 
     //ahora es cliente compra creditos y debe relacionarse con el cliente.
     public convertirDineroCliente(): void {
-        let creditosSalida: number = this.cliente.getCreditos() / this.valorCreditos;
+        let creditosSalida: number = this.cliente.getDinero() / this.valorCreditos;
         this.cliente.setCreditos(creditosSalida);
     }
 
     //cliente convierte creditos y debe relacionarse con el cliente.
-    public intercambiarCreditos(): void {
+    public devolverDineroCliente(): void {
         let dineroSalida: number = this.cliente.getCreditos() * this.valorCreditos;
         this.cliente.setDinero(dineroSalida);
     }
 
     //¿ES correcto usar esos parametros?  total estoy usando valores q ya poseo.
-    public menuCentral(paramCreditos: number, pJuegos: Juego[]): number {
+    // public menuCentral(paramCreditos: number, pJuegos: Juego[]): number {
+    //     console.log("Bienvenido al casino RXXXX");
+    //     console.log("Usted posee " + paramCreditos + " creditos.");
+    //     if(paramCreditos > 0) {
+    //         this.mensajesMenuCentral();
+    //         let readlineSync = require('readline-sync');
+    //         let opcionDeseada: number = readlineSync.questionInt('Ingrese la opcion deseada: ');
+    //         if(opcionDeseada < 1 || opcionDeseada > 5) {
+    //             //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
+    //             console.log("numero erroneo Intente nuevamente");
+    //             console.clear();//para limpiar la pantalla
+    //             //debe ser un return??
+    //             return this.menuCentral(paramCreditos, pJuegos);
+    //         } else if(opcionDeseada === 5) {
+    //             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
+    //             console.log("Usted se retira con " + paramCreditos + " creditos.");
+    //             console.log("Gracias por jugar, esperamos su regreso.");
+    //             return paramCreditos;
+    //         } else {
+    //             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
+    //             //debe ser un return??
+    //             return this.menuCentral(this.ejecucionMaquinas(opcionDeseada, paramCreditos, pJuegos), pJuegos);
+    //         }
+    //     } else {
+    //         console.log("Usted ya no posee creditos suficientes, gracias por jugar vuelva pronto.");
+    //         return paramCreditos;
+    //     }
+        
+    // }
+
+    public menuCentral(): void {
         console.log("Bienvenido al casino RXXXX");
-        console.log("Usted posee " + paramCreditos + " creditos.");
-        if(paramCreditos > 0) {
+        console.log("Usted posee " + this.cliente.getCreditos() + " creditos.");
+        if(this.cliente.getCreditos() > 0) {
             this.mensajesMenuCentral();
             let readlineSync = require('readline-sync');
             let opcionDeseada: number = readlineSync.questionInt('Ingrese la opcion deseada: ');
-            if(opcionDeseada < 1 || opcionDeseada > 5) {
+            if(opcionDeseada < 1 || opcionDeseada > this.juegos.length + 1) {
                 //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
                 console.log("numero erroneo Intente nuevamente");
                 console.clear();//para limpiar la pantalla
                 //debe ser un return??
-                return this.menuCentral(paramCreditos, pJuegos);
-            } else if(opcionDeseada === 5) {
+                this.menuCentral();
+            } else if(opcionDeseada === this.juegos.length + 1) {
                 //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
-                console.log("Usted se retira con " + paramCreditos + " creditos.");
+                console.log("Usted se retira con " + this.cliente.getCreditos() + " creditos.");
                 console.log("Gracias por jugar, esperamos su regreso.");
-                return paramCreditos;
+                this.devolverDineroCliente();
             } else {
                 //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
                 //debe ser un return??
-                return this.menuCentral(this.ejecucionMaquinas(opcionDeseada, paramCreditos, pJuegos), pJuegos);
+                this.ejecucionMaquinas(opcionDeseada);
+                this.menuCentral();
             }
         } else {
             console.log("Usted ya no posee creditos suficientes, gracias por jugar vuelva pronto.");
-            return paramCreditos;
+            this.devolverDineroCliente();
         }
         
     }
@@ -97,15 +128,23 @@ export class Casino {
         console.log("");
     }
     
-    private ejecucionMaquinas(paramOpcion: number, paramCreditos: number, pJuegos: Juego[]): number {
-        switch(paramOpcion){
-            case 1:
-                return this.juegos[paramOpcion - 1].jugar(paramCreditos, pJuegos[paramOpcion - 1 ]);
-            case 3:
-                return this.juegos[paramOpcion - 1].jugar(paramCreditos, pJuegos[paramOpcion - 1 ]);
-            default:
-                return paramCreditos;
-        }
+    private ejecucionMaquinas(paramOpcion: number): void {
+        let creditosCliente: number = this.cliente.getCreditos();
+        let resultado: number = this.juegos[paramOpcion - 1 ].jugar(creditosCliente, this.juegos[paramOpcion - 1 ]);
+        this.cliente.setCreditos(resultado);
+        //es necesario el switch?
+        // switch(paramOpcion){
+        //     case 1:
+        //         this.juegos[paramOpcion - 1].jugar(, );
+        //         break;
+        //     case 3:
+        //         this.juegos[paramOpcion - 1].jugar(this.cliente.getCreditos(), this.juegos[paramOpcion - 1 ]);
+        //         break;
+        //     default:
+        //         console.log("No deberia llegarse a este punto.")
+        //         break;
+        // }
+
     }
 
 }

@@ -2,8 +2,9 @@
 exports.__esModule = true;
 exports.Juego = void 0;
 var Juego = /** @class */ (function () {
-    function Juego(paramID, paramCreditos, paramCantApuestaMinima) {
+    function Juego(paramID, paramNombre, paramCreditos, paramCantApuestaMinima) {
         this.id = paramID;
+        this.nombre = paramNombre;
         this.cantCreditosEnMaquina = paramCreditos;
         this.balance = 0;
         this.cantApuestasTotales = 0;
@@ -34,6 +35,13 @@ var Juego = /** @class */ (function () {
     };
     Juego.prototype.getApuestaMinima = function () {
         return this.cantApuestaMinima;
+    };
+    Juego.prototype.getNombre = function () {
+        return this.nombre;
+    };
+    Juego.prototype.jugar = function (paramCreditos, paramJuego) {
+        this.cantApuestasTotales++;
+        return paramCreditos;
     };
     return Juego;
 }());

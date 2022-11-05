@@ -19,8 +19,8 @@ exports.TragamonedaWinter = void 0;
 var tragamoneda_1 = require("./tragamoneda");
 var TragamonedaWinter = /** @class */ (function (_super) {
     __extends(TragamonedaWinter, _super);
-    function TragamonedaWinter(paramID, paramCreditos, paramCantApuestaMinima) {
-        var _this = _super.call(this, paramID, paramCreditos, paramCantApuestaMinima) || this;
+    function TragamonedaWinter(paramID, paramNombre, paramCreditos, paramCantApuestaMinima) {
+        var _this = _super.call(this, paramID, paramNombre, paramCreditos, paramCantApuestaMinima) || this;
         _this.slot1 = _this.numRandom();
         _this.slot2 = _this.numRandom();
         _this.slot3 = _this.numRandom();
