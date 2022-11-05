@@ -93,26 +93,26 @@ export class TragamonedaSummer extends Tragamoneda {
         return Math.floor(Math.random() * (6 - 0) + 1);
     }
     
-    private mensajesMenuSummer(pSummer: TragamonedaSummer): void {
+    private mensajesMenuSummer(): void {
         console.log("Bienvenido al tragamonedas Summer");
         console.log("opciones: ");
-        console.log("1 _ Apuesta minima" + " (" + pSummer.getApuestaMinima() + ")");
+        console.log("1 _ Apuesta minima" + " (" + this.getApuestaMinima() + ")");
         console.log("2 _ Apuesta un valor a elegir");
         console.log("3 _ Salir");
     }
     
-    public jugar(paramCreditos: number, pSummer: TragamonedaSummer): number {
+    public jugar(paramCreditos: number): number {
         let readlineSync = require('readline-sync');
         //chequeamos si la persona tiene creditos suficientes para usar la maquina.
-        if(paramCreditos >= pSummer.getApuestaMinima()) {
+        if(paramCreditos >= this.getApuestaMinima()) {
             console.log("Usted posee "+ paramCreditos + " creditos.");
-            this.mensajesMenuSummer(pSummer);
+            this.mensajesMenuSummer();
             let opcionDeseada: number = readlineSync.questionInt('Ingrese la opcion deseada ');
             if(opcionDeseada < 1 || opcionDeseada > 3) {
                 //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
                 console.log("numero erroneo Intente nuevamente");
                 console.clear();//para limpiar la pantalla
-                return this.jugar(paramCreditos, pSummer);
+                return this.jugar(paramCreditos);
             } else if(opcionDeseada === 3) {
                 //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
                 console.log("Usted se retira con " + paramCreditos + " creditos.");
@@ -120,7 +120,7 @@ export class TragamonedaSummer extends Tragamoneda {
                 return paramCreditos;
             } else {
                 //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-                return this.jugar(this.ejecucionApuestas(opcionDeseada, paramCreditos, pSummer), pSummer);
+                return this.jugar(this.ejecucionApuestas(opcionDeseada, paramCreditos));
             }
         } else {
             console.log("Usted ya no posee creditos suficientes");
@@ -130,26 +130,26 @@ export class TragamonedaSummer extends Tragamoneda {
     }
     
     
-    private ejecucionApuestas(paramOpcion: number, paramCreditos: number, pSummer: TragamonedaSummer): number {
+    private ejecucionApuestas(paramOpcion: number, paramCreditos: number): number {
         let resultadoApuesta: number = 0;
         let creditosApostados: number = 0;
         let totalCreditos: number = paramCreditos;
         switch(paramOpcion) {
             case 1:
-                creditosApostados = pSummer.getApuestaMinima();
+                creditosApostados = this.getApuestaMinima();
                 totalCreditos -= creditosApostados;
-                resultadoApuesta = pSummer.apuesta(creditosApostados);
-                pSummer.mostrarResultado();
+                resultadoApuesta = this.apuesta(creditosApostados);
+                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
     
             case 2:
-                creditosApostados = this.cantApostada(paramCreditos, pSummer);
+                creditosApostados = this.cantApostada(paramCreditos);
                 totalCreditos -= creditosApostados;
-                resultadoApuesta = pSummer.apuesta(creditosApostados);
-                pSummer.mostrarResultado()
+                resultadoApuesta = this.apuesta(creditosApostados);
+                this.mostrarResultado()
                 console.log(this.mensajeResultado(resultadoApuesta));
                 totalCreditos+= resultadoApuesta;
                 this.pausaParaLeer();
@@ -161,19 +161,20 @@ export class TragamonedaSummer extends Tragamoneda {
     
     }
     
-    private cantApostada(paramCreditos: number, pSummer: TragamonedaSummer): number {
+    private cantApostada(paramCreditos: number): number {
         let readlineSync = require('readline-sync');
         let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
         //comprobar apuesta minima, no cero
-        if(cantApuesta < pSummer.getApuestaMinima() || cantApuesta > paramCreditos) {
+        if(cantApuesta < this.getApuestaMinima() || cantApuesta > paramCreditos) {
             console.log("Cantidad incorrecta, intente nuevamente");
-            return this.cantApostada(paramCreditos, pSummer);
+            return this.cantApostada(paramCreditos);
         }
     
         return cantApuesta;
     }
     
     private mensajeResultado(paramCreditos: number): string {
+        this.conteoEstadisticas(paramCreditos);
         if(paramCreditos > 0) {
             return "Usted gano " + paramCreditos + " creditos."
         } else {

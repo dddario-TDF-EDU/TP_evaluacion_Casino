@@ -42,7 +42,7 @@ let casino777: Casino = new Casino(100000, 0.5, cliente1, juegosCasino);
 casino777.convertirDineroCliente();
 //parametros inutiles, son datos que ya se poseen.
 casino777.menuCentral();
-console.log(cliente1.getCreditos());
+console.log(cliente1.getDinero());
 // //UNA VEZ TERMINADO DE JUGAR RECUPERAMOS EL DINERO.
 // cliente1.setDinero(casino777.intercambiarCreditos(cliente1.getCreditos()))
 

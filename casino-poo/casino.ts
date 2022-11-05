@@ -130,21 +130,8 @@ export class Casino {
     
     private ejecucionMaquinas(paramOpcion: number): void {
         let creditosCliente: number = this.cliente.getCreditos();
-        let resultado: number = this.juegos[paramOpcion - 1 ].jugar(creditosCliente, this.juegos[paramOpcion - 1 ]);
+        let resultado: number = this.juegos[paramOpcion - 1 ].jugar(creditosCliente);
         this.cliente.setCreditos(resultado);
-        //es necesario el switch?
-        // switch(paramOpcion){
-        //     case 1:
-        //         this.juegos[paramOpcion - 1].jugar(, );
-        //         break;
-        //     case 3:
-        //         this.juegos[paramOpcion - 1].jugar(this.cliente.getCreditos(), this.juegos[paramOpcion - 1 ]);
-        //         break;
-        //     default:
-        //         console.log("No deberia llegarse a este punto.")
-        //         break;
-        // }
-
     }
 
 }
