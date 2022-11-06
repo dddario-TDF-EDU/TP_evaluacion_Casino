@@ -134,4 +134,7 @@ export class Casino {
         this.cliente.setCreditos(resultado);
     }
 
+    public impresionTicket(): void {
+        //rellenar con ticket info.
+    }
 }

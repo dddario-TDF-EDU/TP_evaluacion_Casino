@@ -67,4 +67,31 @@ export class Juego implements Ticket {
         }
     }
 
+    //POSIBLES NUEVOS METODOS.
+
+    // private cantApostada(paramCreditos: number): number {
+    //     let readlineSync = require('readline-sync');
+    //     let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
+    //     if((cantApuesta < 0 || cantApuesta > paramCreditos) && cantApuesta < this.getApuestaMinima()) {
+    //         console.log("Cantidad incorrecta, intente nuevamente");
+    //         return this.cantApostada(paramCreditos);
+    //     }
+        
+    //     return cantApuesta;
+    // }
+    
+    // private mensajeResultado(paramCreditos: number): string {
+    //     this.conteoEstadisticas(paramCreditos);
+    //     if(paramCreditos > 0) {
+    //         return "Usted gano " + paramCreditos + " creditos."
+    //     } else {
+    //         return "Usted perdio."
+    //     }
+    // }
+    
+    // private pausaParaLeer(): void {
+    //     let readlineSync = require('readline-sync');
+    //     let pausa = readlineSync.question('');
+    // }
+
 }
