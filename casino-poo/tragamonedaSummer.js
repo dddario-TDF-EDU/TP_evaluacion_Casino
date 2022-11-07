@@ -98,25 +98,25 @@ var TragamonedaSummer = /** @class */ (function (_super) {
     TragamonedaSummer.prototype.numRandom = function () {
         return Math.floor(Math.random() * (6 - 0) + 1);
     };
-    TragamonedaSummer.prototype.mensajesMenuSummer = function (pSummer) {
+    TragamonedaSummer.prototype.mensajesMenuSummer = function () {
         console.log("Bienvenido al tragamonedas Summer");
         console.log("opciones: ");
-        console.log("1 _ Apuesta minima" + " (" + pSummer.getApuestaMinima() + ")");
+        console.log("1 _ Apuesta minima" + " (" + this.getApuestaMinima() + ")");
         console.log("2 _ Apuesta un valor a elegir");
         console.log("3 _ Salir");
     };
-    TragamonedaSummer.prototype.jugar = function (paramCreditos, pSummer) {
+    TragamonedaSummer.prototype.jugar = function (paramCreditos) {
         var readlineSync = require('readline-sync');
         //chequeamos si la persona tiene creditos suficientes para usar la maquina.
-        if (paramCreditos >= pSummer.getApuestaMinima()) {
+        if (paramCreditos >= this.getApuestaMinima()) {
             console.log("Usted posee " + paramCreditos + " creditos.");
-            this.mensajesMenuSummer(pSummer);
+            this.mensajesMenuSummer();
             var opcionDeseada = readlineSync.questionInt('Ingrese la opcion deseada ');
             if (opcionDeseada < 1 || opcionDeseada > 3) {
                 //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
                 console.log("numero erroneo Intente nuevamente");
                 console.clear(); //para limpiar la pantalla
-                return this.jugar(paramCreditos, pSummer);
+                return this.jugar(paramCreditos);
             }
             else if (opcionDeseada === 3) {
                 //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
@@ -126,7 +126,7 @@ var TragamonedaSummer = /** @class */ (function (_super) {
             }
             else {
                 //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-                return this.jugar(this.ejecucionApuestas(opcionDeseada, paramCreditos, pSummer), pSummer);
+                return this.jugar(this.ejecucionApuestas(opcionDeseada, paramCreditos));
             }
         }
         else {
@@ -135,25 +135,25 @@ var TragamonedaSummer = /** @class */ (function (_super) {
             return paramCreditos;
         }
     };
-    TragamonedaSummer.prototype.ejecucionApuestas = function (paramOpcion, paramCreditos, pSummer) {
+    TragamonedaSummer.prototype.ejecucionApuestas = function (paramOpcion, paramCreditos) {
         var resultadoApuesta = 0;
         var creditosApostados = 0;
         var totalCreditos = paramCreditos;
         switch (paramOpcion) {
             case 1:
-                creditosApostados = pSummer.getApuestaMinima();
+                creditosApostados = this.getApuestaMinima();
                 totalCreditos -= creditosApostados;
-                resultadoApuesta = pSummer.apuesta(creditosApostados);
-                pSummer.mostrarResultado();
+                resultadoApuesta = this.apuesta(creditosApostados);
+                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 2:
-                creditosApostados = this.cantApostada(paramCreditos, pSummer);
+                creditosApostados = this.cantApostada(paramCreditos);
                 totalCreditos -= creditosApostados;
-                resultadoApuesta = pSummer.apuesta(creditosApostados);
-                pSummer.mostrarResultado();
+                resultadoApuesta = this.apuesta(creditosApostados);
+                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
@@ -162,17 +162,18 @@ var TragamonedaSummer = /** @class */ (function (_super) {
                 return paramCreditos;
         }
     };
-    TragamonedaSummer.prototype.cantApostada = function (paramCreditos, pSummer) {
+    TragamonedaSummer.prototype.cantApostada = function (paramCreditos) {
         var readlineSync = require('readline-sync');
         var cantApuesta = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
         //comprobar apuesta minima, no cero
-        if (cantApuesta < pSummer.getApuestaMinima() || cantApuesta > paramCreditos) {
+        if (cantApuesta < this.getApuestaMinima() || cantApuesta > paramCreditos) {
             console.log("Cantidad incorrecta, intente nuevamente");
-            return this.cantApostada(paramCreditos, pSummer);
+            return this.cantApostada(paramCreditos);
         }
         return cantApuesta;
     };
     TragamonedaSummer.prototype.mensajeResultado = function (paramCreditos) {
+        this.conteoEstadisticas(paramCreditos);
         if (paramCreditos > 0) {
             return "Usted gano " + paramCreditos + " creditos.";
         }

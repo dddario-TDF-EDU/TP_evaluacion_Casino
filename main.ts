@@ -48,4 +48,7 @@ let casino777: Casino = new Casino(100000, 0.5, cliente1, juegosCasino);
 
 //FALTA HACER EL DESCUENTO Y SUMA A LOS JUEGOS.
 
+casino777.convertirDineroCliente();
+casino777.menuCentral();
+
 console.log("hola");

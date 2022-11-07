@@ -112,20 +112,11 @@ var Casino = /** @class */ (function () {
     };
     Casino.prototype.ejecucionMaquinas = function (paramOpcion) {
         var creditosCliente = this.cliente.getCreditos();
-        var resultado = this.juegos[paramOpcion - 1].jugar(creditosCliente, this.juegos[paramOpcion - 1]);
+        var resultado = this.juegos[paramOpcion - 1].jugar(creditosCliente);
         this.cliente.setCreditos(resultado);
-        //es necesario el switch?
-        // switch(paramOpcion){
-        //     case 1:
-        //         this.juegos[paramOpcion - 1].jugar(, );
-        //         break;
-        //     case 3:
-        //         this.juegos[paramOpcion - 1].jugar(this.cliente.getCreditos(), this.juegos[paramOpcion - 1 ]);
-        //         break;
-        //     default:
-        //         console.log("No deberia llegarse a este punto.")
-        //         break;
-        // }
+    };
+    Casino.prototype.impresionTicket = function () {
+        //rellenar con ticket info.
     };
     return Casino;
 }());

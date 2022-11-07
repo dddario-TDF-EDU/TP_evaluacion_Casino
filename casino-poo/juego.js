@@ -39,9 +39,17 @@ var Juego = /** @class */ (function () {
     Juego.prototype.getNombre = function () {
         return this.nombre;
     };
-    Juego.prototype.jugar = function (paramCreditos, paramJuego) {
-        this.cantApuestasTotales++;
+    Juego.prototype.jugar = function (paramCreditos) {
         return paramCreditos;
+    };
+    Juego.prototype.conteoEstadisticas = function (paramCreditos) {
+        this.cantApuestasTotales++;
+        if (paramCreditos > 0) {
+            this.cantApuestasGanadas++;
+        }
+        else {
+            this.cantApuestasPerdidas++;
+        }
     };
     return Juego;
 }());

@@ -1,3 +1,5 @@
 -falta añadir al casino el balance y a cada maquina, desde la clase juego(?)
 -falta crear txt desde la clase casino(?)
 -falta añadir las dos maquinas, y aun asi adaptarlas al menuCentral.
+
+--Aprender a usar un controlador para interactuar con las clases.
