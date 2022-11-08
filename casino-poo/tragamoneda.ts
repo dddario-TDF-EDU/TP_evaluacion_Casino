@@ -42,10 +42,10 @@ export class Tragamoneda extends Juego {
         return multiplicador;
     }
 
-    public getResultado(): void {
-        console.log(this.slot1);
-        console.log(this.slot2);
-        console.log(this.slot3);
+    public mostrarResultado(): void {
+        console.log(this.slot1[0]);
+        console.log(this.slot2[0]);
+        console.log(this.slot3[0]);
     }
 
 }
