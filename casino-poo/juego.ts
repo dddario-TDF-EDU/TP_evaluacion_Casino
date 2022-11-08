@@ -75,14 +75,14 @@ export class Juego implements Ticket {
 
     //POSIBLES NUEVOS METODOS.
 
-    private conteoEstadisticas(paramCreditos: number, paramResultado: number): void {
+    private conteoEstadisticas(paramResultado: number, paramCantApostada: number): void {
         this.cantApuestasTotales++;
-        if(paramCreditos > 0) {
+        if(paramResultado > 0) {
             this.cantApuestasGanadas++;
             this.balance -= paramResultado;
         } else {
             this.cantApuestasPerdidas++;
-            this.balance += paramResultado;
+            this.balance += paramCantApostada;
         }
     }
 
@@ -91,11 +91,11 @@ export class Juego implements Ticket {
         this.cantCreditosEnMaquina += this.balance;
     }
     
-    protected mensajeResultado(paramCreditos: number, paramResultado: number): string {
-        this.conteoEstadisticas(paramCreditos, paramResultado);
+    protected mensajeResultado(paramResultado: number, paramCantApostada: number): string {
+        this.conteoEstadisticas(paramResultado, paramCantApostada);
         this.ajusteCreditoEnMaquina();
-        if(paramCreditos > 0) {
-            return "Usted gano " + paramCreditos + " creditos."
+        if(paramResultado > 0) {
+            return "Usted gano " + paramResultado + " creditos."
         } else {
             return "Usted perdio."
         }
