@@ -1,9 +1,9 @@
 import { Tragamoneda } from "./tragamoneda";
 
 export class TragamonedaSummer extends Tragamoneda {
-    private slot1x3: number[] = new Array (3);
-    private slot2x3: number[] = new Array (3);
-    private slot3x3: number[] = new Array (3);
+    private slot1x3: number[];
+    private slot2x3: number[];
+    private slot3x3: number[];
     private arraySimbolos: string;
 
     constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number){
