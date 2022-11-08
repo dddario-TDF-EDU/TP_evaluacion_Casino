@@ -184,10 +184,5 @@ export class TragamonedaSummer extends Tragamoneda {
             return "Usted perdio."
         }
     }
-    
-    private pausaParaLeer(): void {
-        let readlineSync = require('readline-sync');
-        let pausa = readlineSync.question('');
-    }
 
 }    

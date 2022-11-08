@@ -372,8 +372,4 @@ export class Ruleta extends Juego {
         }
     }
     
-    private pausaParaLeer(): void {
-        let readlineSync = require('readline-sync');
-        let pausa = readlineSync.question('');
-    }
 }

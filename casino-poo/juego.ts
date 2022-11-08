@@ -93,9 +93,9 @@ export class Juego implements Ticket {
     //     }
     // }
     
-    // private pausaParaLeer(): void {
-    //     let readlineSync = require('readline-sync');
-    //     let pausa = readlineSync.question('');
-    // }
+    protected pausaParaLeer(): void {
+        let readlineSync = require('readline-sync');
+        let pausa = readlineSync.question('');
+    }
 
 }
