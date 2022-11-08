@@ -61,8 +61,3 @@ export class TragamonedaWinter extends Tragamoneda {
     }
 }
 
-let cWinter = new TragamonedaWinter(0, "panchita",1000);
-
-console.log("normal: " + cWinter.apuesta(100));
-
-console.log("especial: " + cWinter.apuestaEspecial(100));

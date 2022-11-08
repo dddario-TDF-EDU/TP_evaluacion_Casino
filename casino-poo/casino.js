@@ -117,6 +117,17 @@ var Casino = /** @class */ (function () {
     };
     Casino.prototype.impresionTicket = function () {
         //rellenar con ticket info.
+        for (var i = 0; i < this.juegos.length; i++) {
+            var ticketMaquina = "";
+            var lineaID = "ID maquina: " + this.juegos[i].getID();
+            var lineaNombre = "Nombre Maquina: " + this.juegos[i].getNombre();
+            var lineaCantCreditosMaquina = "Cantidad de creditos en la maquina: " + this.juegos[i].getCreditos();
+            var lineaCantidadApuestaMinima = "Cantidad Apuesta Minima: " + this.juegos[i].getApuestaMinima();
+            var lineaBalance = "Balance final: " + this.juegos[i].getBalance();
+            var lineaApuestasTotales = "Cantidad de Apuestas Totales: " + this.juegos[i].getCantidadApuestasTotales();
+            var lineaApuestasPerdidas = "Cantidad de Apuestas Perdidas: " + this.juegos[i].getCantidadApuestasPerdidas();
+            var lineaApuestasGanadas = "Cantidad de Apuestas Ganadas: " + this.juegos[i].getCantidadApuestasGanadas();
+        }
     };
     return Casino;
 }());

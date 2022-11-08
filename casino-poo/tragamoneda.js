@@ -21,12 +21,16 @@ var Tragamoneda = /** @class */ (function (_super) {
     __extends(Tragamoneda, _super);
     function Tragamoneda(paramID, paramNombre, paramCreditos, paramCantApuestaMinima) {
         var _this = _super.call(this, paramID, paramNombre, paramCreditos, paramCantApuestaMinima) || this;
-        _this.slot1 = _this.numRandom();
-        _this.slot2 = _this.numRandom();
-        _this.slot3 = _this.numRandom();
+        _this.slot1 = new Array(0);
+        _this.slot2 = new Array(0);
+        _this.slot3 = new Array(0);
+        _this.slot1[0] = _this.numRandom();
+        _this.slot2[0] = _this.numRandom();
+        _this.slot3[0] = _this.numRandom();
         return _this;
     }
     Tragamoneda.prototype.numRandom = function () {
+        console.log("pasooo...");
         return Math.floor(Math.random() * (8 - 0) + 1);
     };
     Tragamoneda.prototype.apuesta = function (paramCreditos) {
@@ -38,15 +42,15 @@ var Tragamoneda = /** @class */ (function (_super) {
         return cantCreditos;
     };
     Tragamoneda.prototype.tiro = function () {
-        this.slot1 = this.numRandom();
-        this.slot2 = this.numRandom();
-        this.slot3 = this.numRandom();
+        this.slot1[0] = this.numRandom();
+        this.slot2[0] = this.numRandom();
+        this.slot3[0] = this.numRandom();
     };
     Tragamoneda.prototype.verifica = function () {
         var multiplicador = 0;
         if (this.slot1 === this.slot2) {
             if (this.slot3 === this.slot2) {
-                multiplicador = this.slot3 + 1;
+                multiplicador = this.slot3[0] + 1;
             }
         }
         return multiplicador;

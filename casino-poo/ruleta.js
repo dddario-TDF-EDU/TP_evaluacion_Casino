@@ -213,97 +213,97 @@ var Ruleta = /** @class */ (function (_super) {
     Ruleta.prototype.ejecucionApuestas = function (paramOpcion, paramCreditos) {
         //sumamos una jugada a los atributos de la maquina.
         var resultadoApuesta = 0;
-        var totalApuesta = this.cantApostada(paramCreditos);
-        var totalCreditos = paramCreditos - totalApuesta;
+        var creditosApostados = this.cantApostada(paramCreditos);
+        var totalCreditos = paramCreditos - creditosApostados;
         switch (paramOpcion) {
             case 1:
-                resultadoApuesta = this.apuestaNroUnico(totalApuesta, this.numeroDeRuletaElegido());
+                resultadoApuesta = this.apuestaNroUnico(creditosApostados, this.numeroDeRuletaElegido());
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 2:
-                resultadoApuesta = this.apuestaPrimeraDocena(totalApuesta);
+                resultadoApuesta = this.apuestaPrimeraDocena(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 3:
-                resultadoApuesta = this.apuestaSegundaDocena(totalApuesta);
+                resultadoApuesta = this.apuestaSegundaDocena(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 4:
-                resultadoApuesta = this.apuestaTerceraDocena(totalApuesta);
+                resultadoApuesta = this.apuestaTerceraDocena(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 5:
-                resultadoApuesta = this.apuestaPrimeraColumna(totalApuesta);
+                resultadoApuesta = this.apuestaPrimeraColumna(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 6:
-                resultadoApuesta = this.apuestaSegundaColumna(totalApuesta);
+                resultadoApuesta = this.apuestaSegundaColumna(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 7:
-                resultadoApuesta = this.apuestaTerceraColumna(totalApuesta);
+                resultadoApuesta = this.apuestaTerceraColumna(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 8:
-                resultadoApuesta = this.apuestaPrimeraMitad(totalApuesta);
+                resultadoApuesta = this.apuestaPrimeraMitad(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 9:
-                resultadoApuesta = this.apuestaSegundaMitad(totalApuesta);
+                resultadoApuesta = this.apuestaSegundaMitad(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 10:
-                resultadoApuesta = this.apuestaRojas(totalApuesta);
+                resultadoApuesta = this.apuestaRojas(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 11:
-                resultadoApuesta = this.apuestaNegras(totalApuesta);
+                resultadoApuesta = this.apuestaNegras(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 12:
-                resultadoApuesta = this.apuestaPares(totalApuesta);
+                resultadoApuesta = this.apuestaPares(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             case 13:
-                resultadoApuesta = this.apuestaImpares(totalApuesta);
+                resultadoApuesta = this.apuestaImpares(creditosApostados);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -319,28 +319,6 @@ var Ruleta = /** @class */ (function (_super) {
             return this.numeroDeRuletaElegido();
         }
         return numeroDeseado;
-    };
-    Ruleta.prototype.cantApostada = function (paramCreditos) {
-        var readlineSync = require('readline-sync');
-        var cantApuesta = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
-        if ((cantApuesta < 0 || cantApuesta > paramCreditos) && cantApuesta < this.getApuestaMinima()) {
-            console.log("Cantidad incorrecta, intente nuevamente");
-            return this.cantApostada(paramCreditos);
-        }
-        return cantApuesta;
-    };
-    Ruleta.prototype.mensajeResultado = function (paramCreditos) {
-        this.conteoEstadisticas(paramCreditos);
-        if (paramCreditos > 0) {
-            return "Usted gano " + paramCreditos + " creditos.";
-        }
-        else {
-            return "Usted perdio.";
-        }
-    };
-    Ruleta.prototype.pausaParaLeer = function () {
-        var readlineSync = require('readline-sync');
-        var pausa = readlineSync.question('');
     };
     return Ruleta;
 }(juego_1.Juego));

@@ -7,6 +7,7 @@ export class Crap extends Juego {
         super(paramID, paramNombre, paramCreditos, paramCantApuestaMinima);
         this.tirarDados();
     }
+
     public getDados() : number {
         return this.dados;
     }
@@ -115,7 +116,7 @@ export class Crap extends Juego {
         }
 
     }
-    
+
     private apostarSegundoIntento(paramCreditos:number,paramDados:number): number {
         this.tirarDados();
         let multiplicador: number = 0;
@@ -234,7 +235,7 @@ export class Crap extends Juego {
             } if(opcionDeseada === 1) {
                 //ESTO ES AHORA LA BARRERA DE ENTRADA.
                 console.log("Usted eligio Tiro inicial para ingresar a sala.");
-                return this.apostarSalida(paramCreditos);
+                return this.jugar(this.apostarSalida(paramCreditos));
             } else {
                 //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
                 console.log("Usted se retira con " + paramCreditos + " creditos.");

@@ -39,17 +39,50 @@ var Juego = /** @class */ (function () {
     Juego.prototype.getNombre = function () {
         return this.nombre;
     };
+    Juego.prototype.getID = function () {
+        return this.id;
+    };
     Juego.prototype.jugar = function (paramCreditos) {
         return paramCreditos;
     };
-    Juego.prototype.conteoEstadisticas = function (paramCreditos) {
+    Juego.prototype.cantApostada = function (paramCreditos) {
+        var readlineSync = require('readline-sync');
+        var cantApuesta = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
+        if (cantApuesta < this.getApuestaMinima() || cantApuesta > paramCreditos) {
+            console.log("Cantidad incorrecta, intente nuevamente");
+            return this.cantApostada(paramCreditos);
+        }
+        return cantApuesta;
+    };
+    //POSIBLES NUEVOS METODOS.
+    Juego.prototype.conteoEstadisticas = function (paramResultado, paramCantApostada) {
         this.cantApuestasTotales++;
-        if (paramCreditos > 0) {
+        if (paramResultado > 0) {
             this.cantApuestasGanadas++;
+            this.balance -= paramResultado;
         }
         else {
             this.cantApuestasPerdidas++;
+            this.balance += paramCantApostada;
         }
+    };
+    Juego.prototype.ajusteCreditoEnMaquina = function () {
+        //se corrigen los creditos que posee la maquina en cada jugada.
+        this.cantCreditosEnMaquina += this.balance;
+    };
+    Juego.prototype.mensajeResultado = function (paramResultado, paramCantApostada) {
+        this.conteoEstadisticas(paramResultado, paramCantApostada);
+        this.ajusteCreditoEnMaquina();
+        if (paramResultado > 0) {
+            return "Usted gano " + paramResultado + " creditos.";
+        }
+        else {
+            return "Usted perdio.";
+        }
+    };
+    Juego.prototype.pausaParaLeer = function () {
+        var readlineSync = require('readline-sync');
+        var pausa = readlineSync.question('');
     };
     return Juego;
 }());

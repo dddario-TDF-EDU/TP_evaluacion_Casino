@@ -15,10 +15,9 @@ import { Juego } from "./casino-poo/juego";
 let summer1: TragamonedaSummer = new TragamonedaSummer(0, "Tragamonedas Summer", 10000, 100);
 let winter1: TragamonedaWinter = new TragamonedaWinter(1, "Tragamonedas Winter", 10000);
 let ruleta1: Ruleta = new Ruleta(2, "La Ruleta",10000);
-//los dados no necesitan parametro, y alteran el orden.
-//let crap1: Crap = new Crap(0, 3, 10000);
+let crap1: Crap = new Crap(0, "Craps", 10000, 25);
 
-let juegosCasino: Juego[] = [summer1, winter1, ruleta1];
+let juegosCasino: Juego[] = [summer1, winter1, ruleta1, crap1];
 
 //preguntamos la cantidad de plata que posee el cliente.
 function cantDineroCliente(): number {
@@ -52,4 +51,3 @@ casino777.convertirDineroCliente();
 casino777.menuCentral();
 casino777.devolverDineroCliente();
 
-console.log("hola");

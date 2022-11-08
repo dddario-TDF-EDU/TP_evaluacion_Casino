@@ -5,13 +5,13 @@ var cliente_1 = require("./casino-poo/cliente");
 var casino_1 = require("./casino-poo/casino");
 var TragamonedaWinter_1 = require("./casino-poo/TragamonedaWinter");
 var ruleta_1 = require("./casino-poo/ruleta");
+var crap_1 = require("./casino-poo/crap");
 //falta resolver la clase Cliente-Tesorersia-Casino para poder probar esto.
 var summer1 = new tragamonedaSummer_1.TragamonedaSummer(0, "Tragamonedas Summer", 10000, 100);
 var winter1 = new TragamonedaWinter_1.TragamonedaWinter(1, "Tragamonedas Winter", 10000);
 var ruleta1 = new ruleta_1.Ruleta(2, "La Ruleta", 10000);
-//los dados no necesitan parametro, y alteran el orden.
-//let crap1: Crap = new Crap(0, 3, 10000);
-var juegosCasino = [summer1, winter1, ruleta1];
+var crap1 = new crap_1.Crap(0, "Craps", 10000, 25);
+var juegosCasino = [summer1, winter1, ruleta1, crap1];
 //preguntamos la cantidad de plata que posee el cliente.
 function cantDineroCliente() {
     var readlineSync = require('readline-sync');
@@ -35,4 +35,5 @@ var casino777 = new casino_1.Casino(100000, 0.5, cliente1, juegosCasino);
 //FALTA HACER EL DESCUENTO Y SUMA A LOS JUEGOS.
 casino777.convertirDineroCliente();
 casino777.menuCentral();
+casino777.devolverDineroCliente();
 console.log("hola");

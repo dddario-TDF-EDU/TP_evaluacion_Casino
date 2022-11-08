@@ -145,7 +145,7 @@ var TragamonedaSummer = /** @class */ (function (_super) {
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apuesta(creditosApostados);
                 this.mostrarResultado();
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -154,36 +154,13 @@ var TragamonedaSummer = /** @class */ (function (_super) {
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apuesta(creditosApostados);
                 this.mostrarResultado();
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
             default:
                 return paramCreditos;
         }
-    };
-    TragamonedaSummer.prototype.cantApostada = function (paramCreditos) {
-        var readlineSync = require('readline-sync');
-        var cantApuesta = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
-        //comprobar apuesta minima, no cero
-        if (cantApuesta < this.getApuestaMinima() || cantApuesta > paramCreditos) {
-            console.log("Cantidad incorrecta, intente nuevamente");
-            return this.cantApostada(paramCreditos);
-        }
-        return cantApuesta;
-    };
-    TragamonedaSummer.prototype.mensajeResultado = function (paramCreditos) {
-        this.conteoEstadisticas(paramCreditos);
-        if (paramCreditos > 0) {
-            return "Usted gano " + paramCreditos + " creditos.";
-        }
-        else {
-            return "Usted perdio.";
-        }
-    };
-    TragamonedaSummer.prototype.pausaParaLeer = function () {
-        var readlineSync = require('readline-sync');
-        var pausa = readlineSync.question('');
     };
     return TragamonedaSummer;
 }(tragamoneda_1.Tragamoneda));
