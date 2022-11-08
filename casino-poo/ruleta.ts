@@ -232,7 +232,7 @@ export class Ruleta extends Juego {
             case 1:
                 resultadoApuesta = this.apuestaNroUnico(totalApuesta, this.numeroDeRuletaElegido());
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -240,7 +240,7 @@ export class Ruleta extends Juego {
             case 2:
                 resultadoApuesta = this.apuestaPrimeraDocena(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -248,7 +248,7 @@ export class Ruleta extends Juego {
             case 3:
                 resultadoApuesta = this.apuestaSegundaDocena(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -256,7 +256,7 @@ export class Ruleta extends Juego {
             case 4:
                 resultadoApuesta = this.apuestaTerceraDocena(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -264,7 +264,7 @@ export class Ruleta extends Juego {
             case 5:
                 resultadoApuesta = this.apuestaPrimeraColumna(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -272,7 +272,7 @@ export class Ruleta extends Juego {
             case 6:
                 resultadoApuesta = this.apuestaSegundaColumna(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -280,7 +280,7 @@ export class Ruleta extends Juego {
             case 7:
                 resultadoApuesta = this.apuestaTerceraColumna(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -288,7 +288,7 @@ export class Ruleta extends Juego {
             case 8:
                 resultadoApuesta = this.apuestaPrimeraMitad(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -296,7 +296,7 @@ export class Ruleta extends Juego {
             case 9:
                 resultadoApuesta = this.apuestaSegundaMitad(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -304,7 +304,7 @@ export class Ruleta extends Juego {
             case 10:
                 resultadoApuesta = this.apuestaRojas(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -312,7 +312,7 @@ export class Ruleta extends Juego {
             case 11:
                 resultadoApuesta = this.apuestaNegras(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -320,7 +320,7 @@ export class Ruleta extends Juego {
             case 12:
                 resultadoApuesta = this.apuestaPares(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -328,7 +328,7 @@ export class Ruleta extends Juego {
             case 13:
                 resultadoApuesta = this.apuestaImpares(totalApuesta);
                 console.log("El resultado fue: " + this.getResultadoRuleta());
-                console.log(this.mensajeResultado(resultadoApuesta))
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta))
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
@@ -352,24 +352,6 @@ export class Ruleta extends Juego {
         return numeroDeseado;
     }
     
-    private cantApostada(paramCreditos: number): number {
-        let readlineSync = require('readline-sync');
-        let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
-        if((cantApuesta < 0 || cantApuesta > paramCreditos) && cantApuesta < this.getApuestaMinima()) {
-            console.log("Cantidad incorrecta, intente nuevamente");
-            return this.cantApostada(paramCreditos);
-        }
     
-        return cantApuesta;
-    }
-    
-    private mensajeResultado(paramCreditos: number): string {
-        this.conteoEstadisticas(paramCreditos);
-        if(paramCreditos > 0) {
-            return "Usted gano " + paramCreditos + " creditos."
-        } else {
-            return "Usted perdio."
-        }
-    }
     
 }

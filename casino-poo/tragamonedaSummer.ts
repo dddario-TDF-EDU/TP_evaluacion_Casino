@@ -135,25 +135,25 @@ export class TragamonedaSummer extends Tragamoneda {
     
     private ejecucionApuestas(paramOpcion: number, paramCreditos: number): number {
         let resultadoApuesta: number = 0;
-        let creditosApostados: number = 0;
+        let totalApuesta: number = 0;
         let totalCreditos: number = paramCreditos;
         switch(paramOpcion) {
             case 1:
-                creditosApostados = this.getApuestaMinima();
-                totalCreditos -= creditosApostados;
-                resultadoApuesta = this.apuesta(creditosApostados);
+                totalApuesta = this.getApuestaMinima();
+                totalCreditos -= totalApuesta;
+                resultadoApuesta = this.apuesta(totalApuesta);
                 this.mostrarResultado();
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
     
             case 2:
-                creditosApostados = this.cantApostada(paramCreditos);
-                totalCreditos -= creditosApostados;
-                resultadoApuesta = this.apuesta(creditosApostados);
+                totalApuesta = this.cantApostada(paramCreditos);
+                totalCreditos -= totalApuesta;
+                resultadoApuesta = this.apuesta(totalApuesta);
                 this.mostrarResultado()
-                console.log(this.mensajeResultado(resultadoApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta));
                 totalCreditos+= resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;    
@@ -164,25 +164,5 @@ export class TragamonedaSummer extends Tragamoneda {
     
     }
     
-    private cantApostada(paramCreditos: number): number {
-        let readlineSync = require('readline-sync');
-        let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
-        //comprobar apuesta minima, no cero
-        if(cantApuesta < this.getApuestaMinima() || cantApuesta > paramCreditos) {
-            console.log("Cantidad incorrecta, intente nuevamente");
-            return this.cantApostada(paramCreditos);
-        }
-    
-        return cantApuesta;
-    }
-    
-    private mensajeResultado(paramCreditos: number): string {
-        this.conteoEstadisticas(paramCreditos);
-        if(paramCreditos > 0) {
-            return "Usted gano " + paramCreditos + " creditos."
-        } else {
-            return "Usted perdio."
-        }
-    }
 
 }    

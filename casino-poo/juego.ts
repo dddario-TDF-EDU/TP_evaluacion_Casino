@@ -61,8 +61,21 @@ export class Juego implements Ticket {
     public jugar(paramCreditos: number): number {
         return paramCreditos;
     }
+    
+    protected cantApostada(paramCreditos: number): number {
+        let readlineSync = require('readline-sync');
+        let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
+        if(cantApuesta < this.getApuestaMinima() || cantApuesta > paramCreditos) {
+            console.log("Cantidad incorrecta, intente nuevamente");
+            return this.cantApostada(paramCreditos);
+        }
+    
+        return cantApuesta;
+    }
 
-    protected conteoEstadisticas(paramCreditos: number, paramResultado: number): void {
+    //POSIBLES NUEVOS METODOS.
+
+    private conteoEstadisticas(paramCreditos: number, paramResultado: number): void {
         this.cantApuestasTotales++;
         if(paramCreditos > 0) {
             this.cantApuestasGanadas++;
@@ -73,27 +86,20 @@ export class Juego implements Ticket {
         }
     }
 
-    //POSIBLES NUEVOS METODOS.
-
-    // private cantApostada(paramCreditos: number): number {
-    //     let readlineSync = require('readline-sync');
-    //     let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
-    //     if((cantApuesta < 0 || cantApuesta > paramCreditos) && cantApuesta < this.getApuestaMinima()) {
-    //         console.log("Cantidad incorrecta, intente nuevamente");
-    //         return this.cantApostada(paramCreditos);
-    //     }
-        
-    //     return cantApuesta;
-    // }
+    private ajusteCreditoEnMaquina(): void {
+        //se corrigen los creditos que posee la maquina en cada jugada.
+        this.cantCreditosEnMaquina += this.balance;
+    }
     
-    // private mensajeResultado(paramCreditos: number): string {
-    //     this.conteoEstadisticas(paramCreditos);
-    //     if(paramCreditos > 0) {
-    //         return "Usted gano " + paramCreditos + " creditos."
-    //     } else {
-    //         return "Usted perdio."
-    //     }
-    // }
+    protected mensajeResultado(paramCreditos: number, paramResultado: number): string {
+        this.conteoEstadisticas(paramCreditos, paramResultado);
+        this.ajusteCreditoEnMaquina();
+        if(paramCreditos > 0) {
+            return "Usted gano " + paramCreditos + " creditos."
+        } else {
+            return "Usted perdio."
+        }
+    }
     
     protected pausaParaLeer(): void {
         let readlineSync = require('readline-sync');
