@@ -1,118 +1,148 @@
 import { Juego } from "./juego";
 
-export class Crap extends Juego{
+export class Crap extends Juego {
      private dados: number;
 
-     constructor(paramID: number, paramCreditos: number, paramCantApuestaMinima?: number) {
-        super(paramID, paramCreditos,paramCantApuestaMinima);
-        this.dados = Math.floor(Math.random() * 12) + 1;
+     constructor(paramID: number, paramNombre: string,paramCreditos: number, paramCantApuestaMinima?: number) {
+        super(paramID, paramNombre, paramCreditos, paramCantApuestaMinima);
+        this.tirarDados();
     }
     public getDados() : number {
         return this.dados;
     }
+
     private tirarDados(): void {
         let numeroSalida: number = Math.floor(Math.random() * 12) + 1;
         this.dados = numeroSalida;
-    } 
-    public apuesta(paramCreditos: number): number {
-        this.tirarDados();
-        let multiplicador: number = 0;
-        let cantCreditos: number = paramCreditos * multiplicador;
-        return cantCreditos;
     }
+    //POSIBLEMENTE SE ELIMINE
+    // public apuesta(paramCreditos: number): number {
+    //     this.tirarDados();
+    //     let multiplicador: number = 0;
+    //     let cantCreditos: number = paramCreditos * multiplicador;
+    //     return cantCreditos;
+    // }
 
+    //VER REFORMULAR
     public mostrarResultado(): void {
         console.log(this.dados);
     }
 
-    public apostarSalida(paramCreditos: number): void {
+    public apostarSalida(paramCreditos: number): number {
         this.tirarDados();     
         if(this.dados == 7 || this.dados == 11) {
             console.log(`el numero es ${this.dados}, avanza a la proxima ronda`);
-            this.elegirApuesta(paramCreditos);
-        }else if(this.dados == 2 ||this.dados == 3 || this.dados == 12){
+            return this.elegirApuesta(paramCreditos);
+        } else if (this.dados == 2 ||this.dados == 3 || this.dados == 12){
             console.log(`el numero es ${this.dados}, crapping out`);
-        }else{
+            return 0;
+        } else {
              console.log(`el numero es ${this.dados}, tirar nuevamente los dados, y repetir el numero ${this.dados} para continuar`);
-            this.apostarSalidaSegundoIntento(paramCreditos,this.dados);
-            }
+            return this.apostarSalidaSegundoIntento(paramCreditos,this.dados);
+        }
     }
-    public apostarSalidaSegundoIntento(paramCreditos: number,resultadoAnterior:number): void {
+
+    public apostarSalidaSegundoIntento(paramCreditos: number,resultadoAnterior:number): number {
         this.tirarDados();
         if(this.dados == resultadoAnterior) {
             console.log(`el numero es ${this.dados}, avanza a la proxima ronda`);
-            this.elegirApuesta(paramCreditos);
-        }else if(this.dados == 7){
+            return this.elegirApuesta(paramCreditos);
+        } else if(this.dados == 7) {
              console.log(`el numero es ${this.dados}, crapping out`);
-        }else{
+             return 0;
+        } else {
             console.log(`el numero es ${this.dados}, vuelve a tirar`);
-            this.apostarSalidaSegundoIntento(paramCreditos,this.dados);
+            return this.apostarSalidaSegundoIntento(paramCreditos,this.dados);
         }
     }
-     public apostarPassLine(paramCreditos: number): void{
-        this.tirarDados();       
+     public apostarPassLine(paramCreditos: number): number {
+        this.tirarDados();
+        let multiplicador: number = 0;       
         if(this.dados == 7 || this.dados == 11) {
             console.log(`el numero es ${this.dados}, la apuesta gana`);
             console.log(`el premio se devuelve al ganador`);
-        }else if(this.dados == 2 ||this.dados == 3 || this.dados == 12){
+            //retorna x 2???
+            multiplicador = 2;
+            return paramCreditos * multiplicador;
+        } else if(this.dados == 2 ||this.dados == 3 || this.dados == 12) {
             console.log(`el numero es ${this.dados}, crapping out, la apuesta pierde`);
-        }else{
-             console.log(`el numero es ${this.dados}, tirar nuevamente los dados, y repetir el numero ${this.dados} para continuar`);
-             this.apostarSegundoIntento(paramCreditos,this.dados);
-            }
+            multiplicador = 0;
+            return paramCreditos * multiplicador;
+        } else {
+            console.log(`el numero es ${this.dados}, tirar nuevamente los dados, y repetir el numero ${this.dados} para continuar`);
+            return this.apostarSegundoIntento(paramCreditos,this.dados);
+        }
     }
-    public apostardontPassBar(paramCreditos:number): void{
+    public apostardontPassBar(paramCreditos:number): number {
         this.tirarDados();
+        let multiplicador: number = 0;
         if(this.dados == 7 || this.dados == 11) {
             console.log(`el numero es ${this.dados}, la apuesta pierde`);
             //retorna x0
-        }else if(this.dados == 2 ||this.dados == 3){
+            multiplicador = 0;
+            return paramCreditos * multiplicador;
+        } else if(this.dados == 2 ||this.dados == 3) {
             console.log(`el numero es ${this.dados}, la apuesta gana`);
             console.log(`el premio se devuelve al ganador`);
             //retorna x2
-        }else if(this.dados == 12){
+            multiplicador = 2;
+            return paramCreditos * multiplicador;
+        } else if(this.dados == 12) {
             console.log(`el numero es ${this.dados}, es un empate`);
             //retorna paramCreditos
-        }else{
+            multiplicador = 1;
+            return paramCreditos * multiplicador;
+        } else {
             console.log(`el numero es ${this.dados}, tirar nuevamente los dados, y repetir el numero ${this.dados} para continuar`);
-            this.apostarSegundoIntento(paramCreditos,this.dados);
+            return this.apostarSegundoIntento(paramCreditos,this.dados);
         }
 
     }
-    private apostarSegundoIntento(paramCreditos:number,paramDados:number):void{
+    private apostarSegundoIntento(paramCreditos:number,paramDados:number): number {
         this.tirarDados();
+        let multiplicador: number = 0;
         if(this.dados == paramDados){
-            //retorna x2
             console.log("el numero es igual");
             console.log("la apuesta gana");
+            //retorna x2
+            multiplicador = 2;
+            return paramCreditos * multiplicador;
         }else{
-            //retorna x0
             console.log("la apuesta pierde");
+            //retorna x0
+            multiplicador = 0;
+            return paramCreditos * multiplicador;
         }
     }
 
-    public apostarEnField(paramCreditos:number):void{
+    public apostarEnField(paramCreditos: number): number {
         this.tirarDados();
+        let multiplicador: number = 0;
         if(this.dados == 3 ||this.dados == 4 ||this.dados == 9 ||this.dados == 10 ||this.dados == 11){
             console.log(`el numero es ${this.dados}, la apuesta gana`);
             console.log(`la apuesta se devuelve al ganador`);
-            //retornar x2
+            multiplicador = 2;
+            return paramCreditos * multiplicador;
         }else if(this.dados == 2 ||this.dados == 12){
             console.log(`el numero es ${this.dados}, la apuesta gana`);
             console.log(`el premio se duplica para el ganador`);
-            //retornar x3
+            multiplicador = 3;
+            return paramCreditos * multiplicador;
         }else{
             console.log(`el numero es ${this.dados}, la apuesta pierde`);
-            //retorna x0
+            multiplicador = 0;
+            return paramCreditos * multiplicador;
         }
     }
-    private mensajeApuesta():void{
+
+    private mensajeApuesta(): void {
         console.log("Elija que tipo de Apuesta prefiere:");
         console.log("1. Apuesta en Field");
         console.log("2. Apuesta Don't Pass Bar");
         console.log("3. Apuesta Pass Line");
     }
-    private elegirApuesta(paramCreditos:number):void{
+    
+    private elegirApuesta(paramCreditos: number): number {
         this.mensajeApuesta();
         let readlineSync = require("readline-sync");
         let opcionApuesta:number = readlineSync.questionInt("Ingrese la opcion deseada: ");
@@ -120,24 +150,22 @@ export class Crap extends Juego{
             console.log("error, intente nuevamente");        
             return this.elegirApuesta(paramCreditos);
         }else{
-            this.ejecucionApuesta(paramCreditos,opcionApuesta);
+            return this.ejecucionApuesta(paramCreditos,opcionApuesta);
         }
     
     }
-    private ejecucionApuesta(paramCreditos:number,paramOpcion:number):void{
+    private ejecucionApuesta(paramCreditos: number, paramOpcion: number): number {
         //plata a elegir
         switch(paramOpcion){
             case 1:
-                this.apostarEnField(paramCreditos);
-                break;
+                return this.apostarEnField(paramCreditos);
             case 2:
-                this.apostardontPassBar(paramCreditos);
-                break;
+                return this.apostardontPassBar(paramCreditos);
             case 3: 
-                this.apostarPassLine(paramCreditos);
-                break;
+                return this.apostarPassLine(paramCreditos);
+                
             default: 
-            //return paramCreditos;
+                return paramCreditos;
         }
     }
     
