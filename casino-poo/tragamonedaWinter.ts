@@ -6,20 +6,20 @@ export class TragamonedaWinter extends Tragamoneda {
 
     constructor(paramID: number, paramCreditos: number, paramCantApuestaMinima?: number){
         super(paramID, paramCreditos, paramCantApuestaMinima);
-        this.slot1 = this.numRandom();
-        this.slot2 = this.numRandom();
-        this.slot3 = this.numRandom();
-        this.rango = 10;
+        //MODIFICAR RANGO
+        this.rango = 2;
     }
 
     protected numRandom(): number {
-        return Math.floor(Math.random() * (this.rango - 0) + 1);
+        return Math.floor(Math.random() * this.rango + 1);
     }
 
     public apuestaEspecial(paramCreditos: number): number {
         let acumulado: number = 0;
+        let rangoEspecial: number = this.rango + 3;
         for(let i = 0; i < 5; i++) {
-            this.tiroEspecial(this.rango - i);
+            this.tiroEspecial(rangoEspecial - i);
+            //REVISAR ACUMULADO (......)
             acumulado += this.verifica();
         }
         let cantCreditos: number = paramCreditos * acumulado;
@@ -27,13 +27,43 @@ export class TragamonedaWinter extends Tragamoneda {
     }
 
 
+    //TIRO ESPECIAL POR RACHA....
+    private apuestaLibre(paramCreditos: number): number {
+        this.tiro();
+        let multiplicador: number = this.verifica();
+            if (multiplicador > 0) {
+                    multiplicador = 2;
+            }
+            let cantCreditos: number = paramCreditos * multiplicador;
+            return cantCreditos;
+    }
+
+
+    //TIRO NORMAL....
+    public apuesta(paramCreditos: number): number {
+        this.tiro();
+        let multiplicador: number = this.verifica();
+        let cantCreditos: number = paramCreditos * multiplicador;
+            if (cantCreditos > 0) {
+               cantCreditos = this.apuestaLibre(cantCreditos);
+            }
+            return cantCreditos;
+    }
+
+
     private tiroEspecial(paramRango: number): void {
-        this.slot1 = this.numRandomEspecial(paramRango);
-        this.slot2 = this.numRandomEspecial(paramRango);
-        this.slot3 = this.numRandomEspecial(paramRango);
+        this.slot1[0] = this.numRandomEspecial(paramRango);
+        this.slot2[0] = this.numRandomEspecial(paramRango);
+        this.slot3[0] = this.numRandomEspecial(paramRango);
     }
 
     private numRandomEspecial(paramRango: number): number {
-        return Math.floor(Math.random() * (paramRango - 0) + 1);
+        return Math.floor(Math.random() * (paramRango) + 1);
     }
 }
+
+let cWinter = new TragamonedaWinter(0,1000);
+
+console.log("normal: " + cWinter.apuesta(100));
+
+console.log("especial: " + cWinter.apuestaEspecial(100));
