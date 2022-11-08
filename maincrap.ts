@@ -5,10 +5,6 @@ import { Crap } from "./casino-poo/crap";
 
 
 
-
-
-
-
 //function elegirApuesta(): any{
 //    let apuesta1 = crap.apostarSalida;
 //    let apuesta2 = crap.apostarPassLine;

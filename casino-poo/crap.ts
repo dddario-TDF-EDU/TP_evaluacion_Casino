@@ -35,7 +35,8 @@ export class Crap extends Juego {
             return this.elegirApuesta(paramCreditos);
         } else if (this.dados == 2 ||this.dados == 3 || this.dados == 12){
             console.log(`el numero es ${this.dados}, crapping out`);
-            return 0;
+            //LE RESTAMOS EL COSTE DE APUESTA.
+            return paramCreditos - this.getApuestaMinima();
         } else {
              console.log(`el numero es ${this.dados}, tirar nuevamente los dados, y repetir el numero ${this.dados} para continuar`);
             return this.apostarSalidaSegundoIntento(paramCreditos,this.dados);
@@ -49,7 +50,8 @@ export class Crap extends Juego {
             return this.elegirApuesta(paramCreditos);
         } else if(this.dados == 7) {
              console.log(`el numero es ${this.dados}, crapping out`);
-             return 0;
+             //LE RESTAMOS EL COSTE DE APUESTA.
+             return paramCreditos - this.getApuestaMinima();
         } else {
             console.log(`el numero es ${this.dados}, vuelve a tirar`);
             return this.apostarSalidaSegundoIntento(paramCreditos,this.dados);
@@ -73,7 +75,7 @@ export class Crap extends Juego {
             return this.apostarSegundoIntento(paramCreditos,this.dados);
         }
     }
-    public apostardontPassBar(paramCreditos:number): number {
+    public apostarDontPassBar(paramCreditos:number): number {
         this.tirarDados();
         let multiplicador: number = 0;
         if(this.dados == 7 || this.dados == 11) {
@@ -150,17 +152,28 @@ export class Crap extends Juego {
             console.log("error, intente nuevamente");        
             return this.elegirApuesta(paramCreditos);
         }else{
-            return this.ejecucionApuesta(paramCreditos,opcionApuesta);
+            return this.ejecucionApuestas(paramCreditos,opcionApuesta);
         }
     
     }
-    private ejecucionApuesta(paramCreditos: number, paramOpcion: number): number {
+    private ejecucionApuestas(paramCreditos: number, paramOpcion: number): number {
         //plata a elegir
+        let resultadoApuesta: number = 0;
+        let creditosApostados: number = this.getApuestaMinima() + this.cantApostada(paramCreditos)
+        let totalCreditos: number = paramCreditos;
         switch(paramOpcion){
             case 1:
+                //falta acceder a elegir la cant de la apuesta.
+                creditosApostados = this.getApuestaMinima();
+                totalCreditos -= creditosApostados;
+                resultadoApuesta = this.apostarEnField(creditosApostados);
+                this.mostrarResultado();
+                console.log(this.mensajeResultado(resultadoApuesta));
+                totalCreditos += resultadoApuesta;
+                this.pausaParaLeer();
                 return this.apostarEnField(paramCreditos);
             case 2:
-                return this.apostardontPassBar(paramCreditos);
+                return this.apostarDontPassBar(paramCreditos);
             case 3: 
                 return this.apostarPassLine(paramCreditos);
                 
@@ -176,27 +189,23 @@ export class Crap extends Juego {
             console.log("Usted posee "+ paramCreditos + " creditos.");
             this.mensajesMenuCrap();
             let opcionDeseada: number = readlineSync.questionInt('Ingrese la opcion deseada ');
-            if(opcionDeseada < 1 || opcionDeseada > 4) {
+            if(opcionDeseada < 1 || opcionDeseada > 2) {
                 //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
                 console.log("numero erroneo Intente nuevamente");
                 console.clear();//para limpiar la pantalla
                 return this.jugar(paramCreditos);
-            } if(opcionDeseada === 3) {
+            } if(opcionDeseada === 1) {
                 //ESTO ES AHORA LA BARRERA DE ENTRADA.
-               console.log("Tiro inicial para ingresar a sala.");
-               return this.apostarSalida(paramCreditos);
-            }
-             else if(opcionDeseada === 4) {
+                console.log("Usted eligio Tiro inicial para ingresar a sala.");
+                return this.apostarSalida(paramCreditos);
+            } else {
                 //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
                 console.log("Usted se retira con " + paramCreditos + " creditos.");
                 console.log("Gracias por jugar, esperamos su regreso.");
                 return paramCreditos;
-            } else {
-                //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-                return this.jugar(this.ejecucionApuestas(opcionDeseada, paramCreditos));
             }
         } else {
-            console.log("Usted ya no posee creditos suficientes");
+            console.log("Usted ya no posee creditos suficientes para usar esta maquina");
             console.log("Gracias por jugar, esperamos su regreso.")
             return paramCreditos;
         }
@@ -205,49 +214,16 @@ export class Crap extends Juego {
     private mensajesMenuCrap(): void {
         console.log("Bienvenido a Craps");
         console.log("opciones: ");
-        console.log("1 _ Apuesta minima" + " (" + this.getApuestaMinima() + ")");
-        console.log("2 _ Apuesta un valor a elegir");
-        console.log("3 _ Ingresar a sala");
-        console.log("4 _ Salir");
+        console.log("1 _ Ingresar a sala con apuesta minima" + " (" + this.getApuestaMinima() + ")");
+        console.log("2 _ Salir");
     }
 
-    protected ejecucionApuestas(paramOpcion: number, paramCreditos: number): number {
-        let resultadoApuesta: number = 0;
-        let creditosApostados: number = 0;
-        let totalCreditos: number = paramCreditos;
-        switch(paramOpcion) {
-            case 1:
-                creditosApostados = this.getApuestaMinima();
-                totalCreditos -= creditosApostados;
-               // resultadoApuesta = crap.apostarSalida(creditosApostados);
-                this.apostarSalida(creditosApostados)
-                this.mostrarResultado();
-                console.log(this.mensajeResultado(resultadoApuesta));
-                //totalCreditos+= resultadoApuesta;
-                this.pausaParaLeer();
-                return totalCreditos;
     
-            case 2:
-                creditosApostados = this.cantApostada(paramCreditos);
-                totalCreditos -= creditosApostados;
-                //resultadoApuesta = crap.apostarSalida(creditosApostados);
-                this.apostarSalida(creditosApostados)
-                this.mostrarResultado()
-                console.log(this.mensajeResultado(resultadoApuesta));
-                totalCreditos+= resultadoApuesta;
-                this.pausaParaLeer();
-                return totalCreditos;    
-            
-            default:
-                return paramCreditos;
-        }
-    
-    }
 
     protected cantApostada(paramCreditos: number): number {
         let readlineSync = require('readline-sync');
         let cantApuesta: number = readlineSync.questionInt('Ingrese la cantidad de credito que desea apostar ');
-        if(cantApuesta < 0 || cantApuesta > paramCreditos) {
+        if((cantApuesta < this.getApuestaMinima() || cantApuesta > paramCreditos)) {
             console.log("Cantidad incorrecta, intente nuevamente");
             return this.cantApostada(paramCreditos);
         }
