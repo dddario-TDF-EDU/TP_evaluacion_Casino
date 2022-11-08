@@ -1,9 +1,9 @@
 import { Juego } from "./juego"
 
 export class Tragamoneda extends Juego {
-    protected slot1: number[];
-    protected slot2: number[];
-    protected slot3: number[];
+    protected slot1: number[] = new Array (0);
+    protected slot2: number[] = new Array (0);
+    protected slot3: number[] = new Array (0);
 
     constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number){
         super(paramID, paramNombre, paramCreditos, paramCantApuestaMinima);
