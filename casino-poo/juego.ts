@@ -18,15 +18,10 @@ export class Juego implements Ticket {
         this.cantApuestasGanadas = 0;
         this.cantApuestasPerdidas = 0;
         if(paramCantApuestaMinima === undefined) {
-            this.cantApuestaMinima = 0;
+            this.cantApuestaMinima = 1;
         } else {
             this.cantApuestaMinima = paramCantApuestaMinima;
         }
-    }
-
-    public ticketTotal(): string[] {
-        /*cambio la Logica pero puede quedarse(?), revisar*/
-        return [];
     }
 
     public  getCreditos(): number {
