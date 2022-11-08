@@ -7,6 +7,7 @@ function mensajesMenuSummer(pSummer: TragamonedaSummer): void {
     console.log("1 _ Apuesta minima" + " (" + pSummer.getApuestaMinima() + ")");
     console.log("2 _ Apuesta un valor a elegir");
     console.log("3 _ Salir");
+    console.log("4 _")
 }
 
 export function menuSummer(paramCreditos: number, pSummer: TragamonedaSummer): number {
@@ -20,7 +21,7 @@ export function menuSummer(paramCreditos: number, pSummer: TragamonedaSummer): n
             //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
             console.log("numero erroneo Intente nuevamente");
             console.clear();//para limpiar la pantalla
-            return menuSummer(paramCreditos, pSummer);
+            menuSummer(paramCreditos);
         } else if(opcionDeseada === 3) {
             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
             console.log("Usted se retira con " + paramCreditos + " creditos.");
@@ -93,3 +94,5 @@ function pausaParaLeer(): void {
     let readlineSync = require('readline-sync');
     let pausa = readlineSync.question('');
 }
+
+menuSummer(1000);
