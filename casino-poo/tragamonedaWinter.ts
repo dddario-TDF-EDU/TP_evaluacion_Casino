@@ -6,9 +6,9 @@ export class TragamonedaWinter extends Tragamoneda {
 
     constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number){
         super(paramID, paramNombre, paramCreditos, paramCantApuestaMinima);
-        this.slot1 = this.numRandom();
-        this.slot2 = this.numRandom();
-        this.slot3 = this.numRandom();
+        this.slot1[0] = this.numRandom();
+        this.slot2[0] = this.numRandom();
+        this.slot3[0] = this.numRandom();
         this.rango = 10;
     }
 
@@ -28,9 +28,9 @@ export class TragamonedaWinter extends Tragamoneda {
 
 
     private tiroEspecial(paramRango: number): void {
-        this.slot1 = this.numRandomEspecial(paramRango);
-        this.slot2 = this.numRandomEspecial(paramRango);
-        this.slot3 = this.numRandomEspecial(paramRango);
+        this.slot1[0] = this.numRandomEspecial(paramRango);
+        this.slot2[0] = this.numRandomEspecial(paramRango);
+        this.slot3[0] = this.numRandomEspecial(paramRango);
     }
 
     private numRandomEspecial(paramRango: number): number {

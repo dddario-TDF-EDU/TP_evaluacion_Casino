@@ -1,15 +1,15 @@
 import { Juego } from "./juego"
 
 export class Tragamoneda extends Juego {
-    protected slot1: number;
-    protected slot2: number;
-    protected slot3: number;
+    protected slot1: number[];
+    protected slot2: number[];
+    protected slot3: number[];
 
     constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number){
         super(paramID, paramNombre, paramCreditos, paramCantApuestaMinima);
-        this.slot1 = this.numRandom();
-        this.slot2 = this.numRandom();
-        this.slot3 = this.numRandom();
+        this.slot1[0] = this.numRandom();
+        this.slot2[0] = this.numRandom();
+        this.slot3[0] = this.numRandom();
     }
     
     protected numRandom(): number {
@@ -26,25 +26,25 @@ export class Tragamoneda extends Juego {
     }
 
     protected tiro(): void {
-        this.slot1 = this.numRandom();
-        this.slot2 = this.numRandom();
-        this.slot3 = this.numRandom();
+        this.slot1[0] = this.numRandom();
+        this.slot2[0] = this.numRandom();
+        this.slot3[0] = this.numRandom();
     }
 
     protected verifica(): number {
         let multiplicador: number = 0;
-        if(this.slot1 === this.slot2) {
-            if(this.slot3 === this.slot2) {
-                multiplicador = this.slot3 + 1;
+        if(this.slot1[0] === this.slot2[0]) {
+            if(this.slot3[0] === this.slot2[0]) {
+                multiplicador = this.slot3[0] + 1;
             }
         }
         return multiplicador;
     }
 
     public getResultado(): void {
-        console.log(this.slot1);
-        console.log(this.slot2);
-        console.log(this.slot3);
+        console.log(this.slot1[0]);
+        console.log(this.slot2[0]);
+        console.log(this.slot3[0]);
     }
 
 

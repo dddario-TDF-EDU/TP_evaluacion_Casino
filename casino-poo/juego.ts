@@ -54,6 +54,10 @@ export class Juego implements Ticket {
         return this.nombre;
     }
 
+    public getID(): number {
+        return this.id;
+    }
+
     public jugar(paramCreditos: number): number {
         return paramCreditos;
     }

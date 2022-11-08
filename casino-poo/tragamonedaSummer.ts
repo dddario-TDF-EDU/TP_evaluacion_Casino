@@ -8,8 +8,11 @@ export class TragamonedaSummer extends Tragamoneda {
 
     constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number){
         super(paramID, paramNombre, paramCreditos, paramCantApuestaMinima);
-       this.tiroDeMaquina();
-       this.arraySimbolos = "$ƒ§#+@7";
+        this.slot1x3 = new Array (3);
+        this.slot2x3 = new Array (3);
+        this.slot3x3 = new Array (3);
+        this.tiroDeMaquina();
+        this.arraySimbolos = "$ƒ§#+@7";
     }
 
     //TIRO DE MAQUINA, genera los numeros al azar de los slots.

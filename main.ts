@@ -50,5 +50,6 @@ let casino777: Casino = new Casino(100000, 0.5, cliente1, juegosCasino);
 
 casino777.convertirDineroCliente();
 casino777.menuCentral();
+casino777.devolverDineroCliente();
 
 console.log("hola");

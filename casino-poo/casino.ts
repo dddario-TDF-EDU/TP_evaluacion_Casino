@@ -136,5 +136,16 @@ export class Casino {
 
     public impresionTicket(): void {
         //rellenar con ticket info.
+        for(let i = 0; i < this.juegos.length; i++) {
+            let ticketMaquina: string = "";
+            let lineaID: string = "ID maquina: " + this.juegos[i].getID();
+            let lineaNombre: string = "Nombre Maquina: " + this.juegos[i].getNombre();
+            let lineaCantCreditosMaquina: string = "Cantidad de creditos en la maquina: " + this.juegos[i].getCreditos();
+            let lineaCantidadApuestaMinima: string = "Cantidad Apuesta Minima: " + this.juegos[i].getApuestaMinima();
+            let lineaBalance: string = "Balance final: " + this.juegos[i].getBalance();
+            let lineaApuestasTotales: string = "Cantidad de Apuestas Totales: " + this.juegos[i].getCantidadApuestasTotales();
+            let lineaApuestasPerdidas: string = "Cantidad de Apuestas Perdidas: " + this.juegos[i].getCantidadApuestasPerdidas();
+            let lineaApuestasGanadas: string = "Cantidad de Apuestas Ganadas: " + this.juegos[i].getCantidadApuestasGanadas();
+        }
     }
 }
