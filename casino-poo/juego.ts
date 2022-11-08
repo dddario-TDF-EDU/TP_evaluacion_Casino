@@ -62,12 +62,14 @@ export class Juego implements Ticket {
         return paramCreditos;
     }
 
-    protected conteoEstadisticas(paramCreditos: number): void {
+    protected conteoEstadisticas(paramCreditos: number, paramResultado: number): void {
         this.cantApuestasTotales++;
         if(paramCreditos > 0) {
             this.cantApuestasGanadas++;
+            this.balance -= paramResultado;
         } else {
             this.cantApuestasPerdidas++;
+            this.balance += paramResultado;
         }
     }
 
