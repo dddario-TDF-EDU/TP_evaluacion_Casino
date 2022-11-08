@@ -14,12 +14,6 @@ export class Crap extends Juego{
         let numeroSalida: number = Math.floor(Math.random() * 12) + 1;
         this.dados = numeroSalida;
     } 
-    public apuesta(paramCreditos: number): number {
-        this.tirarDados();
-        let multiplicador: number = 0;
-        let cantCreditos: number = paramCreditos * multiplicador;
-        return cantCreditos;
-    }
 
     public mostrarResultado(): void {
         console.log(this.dados);
