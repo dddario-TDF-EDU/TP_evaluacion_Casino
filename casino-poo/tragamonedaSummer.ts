@@ -132,28 +132,27 @@ export class TragamonedaSummer extends Tragamoneda {
         }
     }
     
-    
     private ejecucionApuestas(paramOpcion: number, paramCreditos: number): number {
         let resultadoApuesta: number = 0;
-        let totalApuesta: number = 0;
+        let creditosApostados: number = 0;
         let totalCreditos: number = paramCreditos;
         switch(paramOpcion) {
             case 1:
-                totalApuesta = this.getApuestaMinima();
-                totalCreditos -= totalApuesta;
-                resultadoApuesta = this.apuesta(totalApuesta);
+                creditosApostados = this.getApuestaMinima();
+                totalCreditos -= creditosApostados;
+                resultadoApuesta = this.apuesta(creditosApostados);
                 this.mostrarResultado();
-                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;
     
             case 2:
-                totalApuesta = this.cantApostada(paramCreditos);
-                totalCreditos -= totalApuesta;
-                resultadoApuesta = this.apuesta(totalApuesta);
+                creditosApostados = this.cantApostada(paramCreditos);
+                totalCreditos -= creditosApostados;
+                resultadoApuesta = this.apuesta(creditosApostados);
                 this.mostrarResultado()
-                console.log(this.mensajeResultado(resultadoApuesta, totalApuesta));
+                console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos+= resultadoApuesta;
                 this.pausaParaLeer();
                 return totalCreditos;    
