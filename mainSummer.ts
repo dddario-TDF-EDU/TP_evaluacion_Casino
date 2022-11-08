@@ -8,6 +8,7 @@ function mensajesMenuSummer(): void {
     console.log("1 _ Apuesta minima" + " (" + summer.getApuestaMinima() + ")");
     console.log("2 _ Apuesta un valor a elegir");
     console.log("3 _ Salir");
+    console.log("4 _")
 }
 
 export function menuSummer(paramCreditos: number): number {
@@ -22,7 +23,7 @@ export function menuSummer(paramCreditos: number): number {
             console.log("numero erroneo Intente nuevamente");
             console.clear();//para limpiar la pantalla
             menuSummer(paramCreditos);
-        } else if(opcionDeseada === 3) {
+        }else if(opcionDeseada === 3) {
             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
             console.log("Usted se retira con " + paramCreditos + " creditos.");
             console.log("Gracias por jugar, esperamos su regreso.");
@@ -93,5 +94,6 @@ function pausaParaLeer(): void {
     let readlineSync = require('readline-sync');
     let pausa = readlineSync.question('');
 }
+
 
 menuSummer(1000);
