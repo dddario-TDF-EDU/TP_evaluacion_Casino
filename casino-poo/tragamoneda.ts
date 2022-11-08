@@ -34,8 +34,8 @@ export class Tragamoneda extends Juego {
 
     protected verifica(): number {
         let multiplicador: number = 0;
-        if(this.slot1 === this.slot2) {
-            if(this.slot3 === this.slot2) {
+        if(this.slot1[0] === this.slot2[0]) {
+            if(this.slot3[0] === this.slot2[0]) {
                 multiplicador = this.slot3[0] + 1;
             }
         }
@@ -43,9 +43,7 @@ export class Tragamoneda extends Juego {
     }
 
     public mostrarResultado(): void {
-        console.log(this.slot1[0]);
-        console.log(this.slot2[0]);
-        console.log(this.slot3[0]);
+        console.log(this.slot1[0] + " " + this.slot2[0] + " " + this.slot3[0]);
     }
 
 }

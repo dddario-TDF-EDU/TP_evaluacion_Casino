@@ -48,17 +48,15 @@ var Tragamoneda = /** @class */ (function (_super) {
     };
     Tragamoneda.prototype.verifica = function () {
         var multiplicador = 0;
-        if (this.slot1 === this.slot2) {
-            if (this.slot3 === this.slot2) {
+        if (this.slot1[0] === this.slot2[0]) {
+            if (this.slot3[0] === this.slot2[0]) {
                 multiplicador = this.slot3[0] + 1;
             }
         }
         return multiplicador;
     };
-    Tragamoneda.prototype.getResultado = function () {
-        console.log(this.slot1);
-        console.log(this.slot2);
-        console.log(this.slot3);
+    Tragamoneda.prototype.mostrarResultado = function () {
+        console.log(this.slot1[0] + " " + this.slot2[0] + " " + this.slot3[0]);
     };
     return Tragamoneda;
 }(juego_1.Juego));

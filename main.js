@@ -11,6 +11,7 @@ var summer1 = new tragamonedaSummer_1.TragamonedaSummer(0, "Tragamonedas Summer"
 var winter1 = new TragamonedaWinter_1.TragamonedaWinter(1, "Tragamonedas Winter", 10000);
 var ruleta1 = new ruleta_1.Ruleta(2, "La Ruleta", 10000);
 var crap1 = new crap_1.Crap(0, "Craps", 10000, 25);
+//comentario
 var juegosCasino = [summer1, winter1, ruleta1, crap1];
 //preguntamos la cantidad de plata que posee el cliente.
 function cantDineroCliente() {
@@ -36,4 +37,3 @@ var casino777 = new casino_1.Casino(100000, 0.5, cliente1, juegosCasino);
 casino777.convertirDineroCliente();
 casino777.menuCentral();
 casino777.devolverDineroCliente();
-console.log("hola");
