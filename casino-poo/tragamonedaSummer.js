@@ -19,26 +19,27 @@ exports.TragamonedaSummer = void 0;
 var tragamoneda_1 = require("./tragamoneda");
 var TragamonedaSummer = /** @class */ (function (_super) {
     __extends(TragamonedaSummer, _super);
+    //rango heredable?
     function TragamonedaSummer(paramID, paramNombre, paramCreditos, paramCantApuestaMinima) {
         var _this = _super.call(this, paramID, paramNombre, paramCreditos, paramCantApuestaMinima) || this;
-        _this.slot1x3 = new Array(3);
-        _this.slot2x3 = new Array(3);
-        _this.slot3x3 = new Array(3);
+        _this.slot1 = new Array(3);
+        _this.slot2 = new Array(3);
+        _this.slot3 = new Array(3);
         _this.tiroDeMaquina();
         _this.arraySimbolos = "$ƒ§#+@7";
         return _this;
     }
     //TIRO DE MAQUINA, genera los numeros al azar de los slots.
     TragamonedaSummer.prototype.tiroDeMaquina = function () {
-        this.slot1x3[1] = this.numRandom();
-        this.slot1x3[0] = this.variantes(this.slot1x3[1], -2);
-        this.slot1x3[2] = this.variantes(this.slot1x3[1], 2);
-        this.slot2x3[1] = this.numRandom();
-        this.slot2x3[0] = this.variantes(this.slot2x3[1], -1);
-        this.slot2x3[2] = this.variantes(this.slot2x3[1], 1);
-        this.slot3x3[1] = this.numRandom();
-        this.slot3x3[0] = this.variantes(this.slot3x3[1], -2);
-        this.slot3x3[2] = this.variantes(this.slot3x3[1], 2);
+        this.slot1[1] = this.numRandom();
+        this.slot1[0] = this.variantes(this.slot1[1], -2);
+        this.slot1[2] = this.variantes(this.slot1[1], 2);
+        this.slot2[1] = this.numRandom();
+        this.slot2[0] = this.variantes(this.slot2[1], -1);
+        this.slot2[2] = this.variantes(this.slot2[1], 1);
+        this.slot3[1] = this.numRandom();
+        this.slot3[0] = this.variantes(this.slot3[1], -2);
+        this.slot3[2] = this.variantes(this.slot3[1], 2);
     };
     //variantes corrige el valor 1.1 y 3.1 en caso de ser mayores o menores al limite
     TragamonedaSummer.prototype.variantes = function (paramSlot, paramSuma) {
@@ -66,16 +67,16 @@ var TragamonedaSummer = /** @class */ (function (_super) {
     };
     //Muestra el resultado, (cambiado para ver simbolos)
     TragamonedaSummer.prototype.mostrarResultado = function () {
-        for (var i = 0; i < this.slot1x3.length; i++) {
-            console.log(this.arraySimbolos[this.slot1x3[i] - 1] + " " + this.arraySimbolos[this.slot2x3[i] - 1] + " " + this.arraySimbolos[this.slot3x3[i] - 1] + " ");
+        for (var i = 0; i < this.slot1.length; i++) {
+            console.log(this.arraySimbolos[this.slot1[i] - 1] + " " + this.arraySimbolos[this.slot2[i] - 1] + " " + this.arraySimbolos[this.slot3[i] - 1] + " ");
         }
     };
     //Verifica lineas horizontales
     TragamonedaSummer.prototype.verifica = function () {
         var multiplicador = 0;
-        for (var i = 0; i < this.slot1x3.length; i++) {
-            if (this.slot1x3[i] === this.slot2x3[i] && this.slot3x3[i] === this.slot1x3[i]) {
-                multiplicador = this.slot3x3[i] + 3;
+        for (var i = 0; i < this.slot1.length; i++) {
+            if (this.slot1[i] === this.slot2[i] && this.slot3[i] === this.slot1[i]) {
+                multiplicador = this.slot3[i] + 3;
                 return multiplicador;
             }
         }
@@ -84,12 +85,12 @@ var TragamonedaSummer = /** @class */ (function (_super) {
     //Verifica lineas diagonales
     TragamonedaSummer.prototype.verificaEscalera = function () {
         var multiplicador = 0;
-        if (this.slot1x3[0] === this.slot2x3[1] && this.slot3x3[2] === this.slot1x3[0]) {
-            multiplicador = this.slot3x3[2] + 3;
+        if (this.slot1[0] === this.slot2[1] && this.slot3[2] === this.slot1[0]) {
+            multiplicador = this.slot3[2] + 3;
             return multiplicador;
         }
-        if (this.slot1x3[2] === this.slot2x3[1] && this.slot3x3[0] === this.slot1x3[2]) {
-            multiplicador = this.slot3x3[0] + 3;
+        if (this.slot1[2] === this.slot2[1] && this.slot3[0] === this.slot1[2]) {
+            multiplicador = this.slot3[0] + 3;
             return multiplicador;
         }
         return multiplicador;

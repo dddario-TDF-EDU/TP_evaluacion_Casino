@@ -37,35 +37,6 @@ var Casino = /** @class */ (function () {
         var dineroSalida = this.cliente.getCreditos() * this.valorCreditos;
         this.cliente.setDinero(dineroSalida);
     };
-    //¿ES correcto usar esos parametros?  total estoy usando valores q ya poseo.
-    // public menuCentral(paramCreditos: number, pJuegos: Juego[]): number {
-    //     console.log("Bienvenido al casino RXXXX");
-    //     console.log("Usted posee " + paramCreditos + " creditos.");
-    //     if(paramCreditos > 0) {
-    //         this.mensajesMenuCentral();
-    //         let readlineSync = require('readline-sync');
-    //         let opcionDeseada: number = readlineSync.questionInt('Ingrese la opcion deseada: ');
-    //         if(opcionDeseada < 1 || opcionDeseada > 5) {
-    //             //REGRESO AL MENU PORQ METISTE LA OPCION INCORRECTA
-    //             console.log("numero erroneo Intente nuevamente");
-    //             console.clear();//para limpiar la pantalla
-    //             //debe ser un return??
-    //             return this.menuCentral(paramCreditos, pJuegos);
-    //         } else if(opcionDeseada === 5) {
-    //             //SALIR DEL PROGRAMA CON LA CANTIDAD DE CREDITOS 
-    //             console.log("Usted se retira con " + paramCreditos + " creditos.");
-    //             console.log("Gracias por jugar, esperamos su regreso.");
-    //             return paramCreditos;
-    //         } else {
-    //             //EJECUTAR LA OPCION Y REGRESAR AL PROGRAMA CON LA NUEVA CANTIDAD DE CREDITOS
-    //             //debe ser un return??
-    //             return this.menuCentral(this.ejecucionMaquinas(opcionDeseada, paramCreditos, pJuegos), pJuegos);
-    //         }
-    //     } else {
-    //         console.log("Usted ya no posee creditos suficientes, gracias por jugar vuelva pronto.");
-    //         return paramCreditos;
-    //     }
-    // }
     Casino.prototype.menuCentral = function () {
         console.log("Bienvenido al casino RXXXX");
         console.log("Usted posee " + this.cliente.getCreditos() + " creditos.");
@@ -117,17 +88,20 @@ var Casino = /** @class */ (function () {
     };
     Casino.prototype.impresionTicket = function () {
         //rellenar con ticket info.
-        for (var i = 0; i < this.juegos.length; i++) {
-            var ticketMaquina = "";
-            var lineaID = "ID maquina: " + this.juegos[i].getID();
-            var lineaNombre = "Nombre Maquina: " + this.juegos[i].getNombre();
-            var lineaCantCreditosMaquina = "Cantidad de creditos en la maquina: " + this.juegos[i].getCreditos();
-            var lineaCantidadApuestaMinima = "Cantidad Apuesta Minima: " + this.juegos[i].getApuestaMinima();
-            var lineaBalance = "Balance final: " + this.juegos[i].getBalance();
-            var lineaApuestasTotales = "Cantidad de Apuestas Totales: " + this.juegos[i].getCantidadApuestasTotales();
-            var lineaApuestasPerdidas = "Cantidad de Apuestas Perdidas: " + this.juegos[i].getCantidadApuestasPerdidas();
-            var lineaApuestasGanadas = "Cantidad de Apuestas Ganadas: " + this.juegos[i].getCantidadApuestasGanadas();
+        var cantMaquinas = this.juegos.length;
+        var ticketTodasLasMaquinas = new Array(cantMaquinas);
+        for (var i = 0; i < cantMaquinas; i++) {
+            var lineaID = " ID maquina: " + this.juegos[i].getID();
+            var lineaNombre = "  Nombre Maquina: " + this.juegos[i].getNombre();
+            var lineaCantCreditosMaquina = "  Cantidad de creditos en la maquina: " + this.juegos[i].getCreditos();
+            var lineaCantidadApuestaMinima = "  Cantidad Apuesta Minima: " + this.juegos[i].getApuestaMinima();
+            var lineaBalance = "  Balance final: " + this.juegos[i].getBalance();
+            var lineaApuestasTotales = "  Cantidad de Apuestas Totales: " + this.juegos[i].getCantidadApuestasTotales();
+            var lineaApuestasPerdidas = "  Cantidad de Apuestas Perdidas: " + this.juegos[i].getCantidadApuestasPerdidas();
+            var lineaApuestasGanadas = "  Cantidad de Apuestas Ganadas: " + this.juegos[i].getCantidadApuestasGanadas();
+            ticketTodasLasMaquinas[i] = lineaID + lineaNombre + lineaCantCreditosMaquina + lineaCantidadApuestaMinima + lineaBalance + lineaApuestasTotales + lineaApuestasPerdidas + lineaApuestasGanadas;
         }
+        return ticketTodasLasMaquinas;
     };
     return Casino;
 }());
