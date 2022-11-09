@@ -10,7 +10,7 @@ var crap_1 = require("./casino-poo/crap");
 var summer1 = new tragamonedaSummer_1.TragamonedaSummer(0, "Tragamonedas Summer", 10000, 100);
 var winter1 = new TragamonedaWinter_1.TragamonedaWinter(1, "Tragamonedas Winter", 10000);
 var ruleta1 = new ruleta_1.Ruleta(2, "La Ruleta", 10000);
-var crap1 = new crap_1.Crap(0, "Craps", 10000, 25);
+var crap1 = new crap_1.Crap(3, "Craps", 10000, 25);
 //comentario
 var juegosCasino = [summer1, winter1, ruleta1, crap1];
 //preguntamos la cantidad de plata que posee el cliente.
