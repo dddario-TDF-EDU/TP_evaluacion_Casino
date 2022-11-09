@@ -37,3 +37,5 @@ var casino777 = new casino_1.Casino(100000, 0.5, cliente1, juegosCasino);
 casino777.convertirDineroCliente();
 casino777.menuCentral();
 casino777.devolverDineroCliente();
+var datosDeMaquinas = casino777.impresionTicket();
+console.log(datosDeMaquinas);
