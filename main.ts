@@ -7,8 +7,6 @@ import { Ruleta } from "./casino-poo/ruleta";
 import { Crap } from "./casino-poo/crap";
 import { Juego } from "./casino-poo/juego";
 
-
-
 //falta resolver la clase Cliente-Tesorersia-Casino para poder probar esto.
 
 

@@ -19,6 +19,7 @@ exports.Tragamoneda = void 0;
 var juego_1 = require("./juego");
 var Tragamoneda = /** @class */ (function (_super) {
     __extends(Tragamoneda, _super);
+    //rango heredable?
     function Tragamoneda(paramID, paramNombre, paramCreditos, paramCantApuestaMinima) {
         var _this = _super.call(this, paramID, paramNombre, paramCreditos, paramCantApuestaMinima) || this;
         _this.slot1 = new Array(0);
