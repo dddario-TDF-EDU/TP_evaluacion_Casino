@@ -4,6 +4,7 @@ export class Tragamoneda extends Juego {
     protected slot1: number[] = new Array(0);
     protected slot2: number[] = new Array(0);
     protected slot3: number[] = new Array(0);
+    //rango heredable?
 
     constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number){
         super(paramID, paramNombre ,paramCreditos, paramCantApuestaMinima);

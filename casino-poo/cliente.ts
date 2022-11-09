@@ -15,11 +15,11 @@ export class Cliente {
         this.dinero = paramDinero;
     }
 
-    public getCreditos(): number {
+    public getCredito(): number {
         return this.creditos;
     }
 
-    public setCreditos(paramCreditos: number): void {
+    public setCredito(paramCreditos: number): void {
         this.creditos = paramCreditos;
     }
 } 

@@ -22,7 +22,7 @@ var TragamonedaWinter = /** @class */ (function (_super) {
     function TragamonedaWinter(paramID, paramNombre, paramCreditos, paramCantApuestaMinima) {
         var _this = _super.call(this, paramID, paramNombre, paramCreditos, paramCantApuestaMinima) || this;
         //ver como es el tema de probabilidad
-        _this.rango = 2;
+        _this.rango = 3;
         return _this;
     }
     TragamonedaWinter.prototype.numRandom = function () {
@@ -33,7 +33,9 @@ var TragamonedaWinter = /** @class */ (function (_super) {
         var rangoEspecial = this.rango + 3;
         for (var i = 0; i < 5; i++) {
             this.tiroEspecial(rangoEspecial - i);
-            //REVISAR ACUMULADO (......)
+            this.mostrarResultado();
+            this.pausaParaLeer();
+            //REVISAR ACUMULADO (funciona bien pero pagamos demasiado?);
             acumulado += this.verifica();
         }
         var cantCreditos = paramCreditos * acumulado;
@@ -43,18 +45,29 @@ var TragamonedaWinter = /** @class */ (function (_super) {
     TragamonedaWinter.prototype.apuestaLibre = function (paramCreditos) {
         this.tiro();
         var multiplicador = this.verifica();
+        this.mostrarResultado();
         if (multiplicador > 0) {
+            console.log("Gano nuevamente!");
+            console.log("Su ganancia es doble");
+            this.pausaParaLeer();
             multiplicador = 2;
+            var cantCreditos = paramCreditos * multiplicador;
+            return cantCreditos;
         }
-        var cantCreditos = paramCreditos * multiplicador;
-        return cantCreditos;
+        console.log("Buena suerte en la proxima.");
+        this.pausaParaLeer();
+        return paramCreditos;
     };
     //TIRO NORMAL....
     TragamonedaWinter.prototype.apuesta = function (paramCreditos) {
         this.tiro();
-        var multiplicador = this.verifica();
+        this.mostrarResultado();
+        //es muy dificil ganar, aumentamos la recompensa(?)
+        var multiplicador = (this.verifica() * 3);
         var cantCreditos = paramCreditos * multiplicador;
         if (cantCreditos > 0) {
+            console.log("Usted gano y tiene una tirada extra");
+            this.pausaParaLeer();
             cantCreditos = this.apuestaLibre(cantCreditos);
         }
         return cantCreditos;
@@ -113,7 +126,6 @@ var TragamonedaWinter = /** @class */ (function (_super) {
                 creditosApostados = this.cantApostada(paramCreditos);
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apuesta(creditosApostados);
-                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
@@ -122,7 +134,6 @@ var TragamonedaWinter = /** @class */ (function (_super) {
                 creditosApostados = this.cantApostada(paramCreditos);
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apuestaEspecial(creditosApostados);
-                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();

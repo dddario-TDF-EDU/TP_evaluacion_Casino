@@ -33,6 +33,7 @@ export class Crap extends Juego {
         this.tirarDados();   
         if(this.dados == 7 || this.dados == 11) {
             console.log(`el numero es ${this.dados}, avanza a la proxima ronda`);
+            this.pausaParaLeer();
             return this.elegirApuesta(paramCreditos);
         } else if (this.dados == 2 ||this.dados == 3 || this.dados == 12){
             console.log(`el numero es ${this.dados}, crapping out`);
@@ -40,19 +41,21 @@ export class Crap extends Juego {
             let resultadoApuesta: number = 0;
             let creditosApostados: number = this.getApuestaMinima();
             let totalCreditos: number = paramCreditos - creditosApostados;
-            this.mensajeResultado(resultadoApuesta, creditosApostados);
+            console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
+            this.pausaParaLeer();
             return totalCreditos;
         } else {
              console.log(`el numero es ${this.dados}, tirar nuevamente los dados, y repetir el numero ${this.dados} para continuar`);
+             this.pausaParaLeer();
             return this.apostarSalidaSegundoIntento(paramCreditos,this.dados);
         }
     }
 
     public apostarSalidaSegundoIntento(paramCreditos: number,resultadoAnterior:number): number {
         this.tirarDados();
-        console.log("el resultado anterior fue: " + resultadoAnterior);
         if(this.dados == resultadoAnterior) {
             console.log(`el nuevo numero es ${this.dados}, avanza a la proxima ronda`);
+            this.pausaParaLeer();
             return this.elegirApuesta(paramCreditos);
         } else if(this.dados == 7) {
              console.log(`el nuevo numero es ${this.dados}, crapping out`);
@@ -61,10 +64,12 @@ export class Crap extends Juego {
             let resultadoApuesta: number = 0;
             let creditosApostados: number = this.getApuestaMinima();
             let totalCreditos: number = paramCreditos - creditosApostados;
-            this.mensajeResultado(resultadoApuesta, creditosApostados);
+            console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
+            this.pausaParaLeer();
             return totalCreditos;
         } else {
             console.log(`el nuevo numero es ${this.dados}, vuelve a tirar`);
+            this.pausaParaLeer();
             return this.apostarSalidaSegundoIntento(paramCreditos,this.dados);
         }
     }
@@ -191,7 +196,6 @@ export class Crap extends Juego {
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apostarEnField(creditosApostados);
                 //REVISAR COMO SE MUESTRA EL RESULTADO.
-                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
@@ -200,7 +204,6 @@ export class Crap extends Juego {
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apostarDontPassBar(creditosApostados);
                 //REVISAR COMO SE MUESTRA EL RESULTADO.
-                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
@@ -209,7 +212,6 @@ export class Crap extends Juego {
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apostarPassLine(creditosApostados);
                 //REVISAR COMO SE MUESTRA EL RESULTADO.
-                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();

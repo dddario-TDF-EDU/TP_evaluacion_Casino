@@ -1,31 +1,29 @@
 import { Tragamoneda } from "./tragamoneda";
 
 export class TragamonedaSummer extends Tragamoneda {
-    private slot1x3: number[];
-    private slot2x3: number[];
-    private slot3x3: number[];
     private arraySimbolos: string;
+    //rango heredable?
 
     constructor(paramID: number, paramNombre: string, paramCreditos: number, paramCantApuestaMinima?: number){
         super(paramID, paramNombre, paramCreditos, paramCantApuestaMinima);
-        this.slot1x3 = new Array (3);
-        this.slot2x3 = new Array (3);
-        this.slot3x3 = new Array (3);
+        this.slot1 = new Array (3);
+        this.slot2 = new Array (3);
+        this.slot3 = new Array (3);
         this.tiroDeMaquina();
         this.arraySimbolos = "$ƒ§#+@7";
     }
 
     //TIRO DE MAQUINA, genera los numeros al azar de los slots.
     private tiroDeMaquina(): void {
-        this.slot1x3[1] = this.numRandom();
-        this.slot1x3[0] = this.variantes(this.slot1x3[1], -2);
-        this.slot1x3[2] = this.variantes(this.slot1x3[1], 2);
-        this.slot2x3[1] = this.numRandom();
-        this.slot2x3[0] = this.variantes(this.slot2x3[1], -1);
-        this.slot2x3[2] = this.variantes(this.slot2x3[1], 1);
-        this.slot3x3[1] = this.numRandom();
-        this.slot3x3[0] = this.variantes(this.slot3x3[1], -2);
-        this.slot3x3[2] = this.variantes(this.slot3x3[1], 2);
+        this.slot1[1] = this.numRandom();
+        this.slot1[0] = this.variantes(this.slot1[1], -2);
+        this.slot1[2] = this.variantes(this.slot1[1], 2);
+        this.slot2[1] = this.numRandom();
+        this.slot2[0] = this.variantes(this.slot2[1], -1);
+        this.slot2[2] = this.variantes(this.slot2[1], 1);
+        this.slot3[1] = this.numRandom();
+        this.slot3[0] = this.variantes(this.slot3[1], -2);
+        this.slot3[2] = this.variantes(this.slot3[1], 2);
     }
 
     //variantes corrige el valor 1.1 y 3.1 en caso de ser mayores o menores al limite
@@ -58,17 +56,17 @@ export class TragamonedaSummer extends Tragamoneda {
 
     //Muestra el resultado, (cambiado para ver simbolos)
     public mostrarResultado(): void {
-        for(let i=0; i < this.slot1x3.length; i++) {
-            console.log(this.arraySimbolos[this.slot1x3[i]-1]  + " " + this.arraySimbolos[this.slot2x3[i]-1] + " " + this.arraySimbolos[this.slot3x3[i]-1]+ " ");
+        for(let i=0; i < this.slot1.length; i++) {
+            console.log(this.arraySimbolos[this.slot1[i]-1]  + " " + this.arraySimbolos[this.slot2[i]-1] + " " + this.arraySimbolos[this.slot3[i]-1]+ " ");
         }
     }
 
     //Verifica lineas horizontales
     protected verifica(): number {
         let multiplicador: number = 0;
-        for(let i = 0; i < this.slot1x3.length; i++) {
-            if(this.slot1x3[i] === this.slot2x3[i] && this.slot3x3[i] === this.slot1x3[i]) {            
-                multiplicador = this.slot3x3[i] + 3;
+        for(let i = 0; i < this.slot1.length; i++) {
+            if(this.slot1[i] === this.slot2[i] && this.slot3[i] === this.slot1[i]) {            
+                multiplicador = this.slot3[i] + 3;
                 return multiplicador;
             }
         }
@@ -78,13 +76,13 @@ export class TragamonedaSummer extends Tragamoneda {
     //Verifica lineas diagonales
     protected verificaEscalera(): number {
         let multiplicador: number = 0;
-        if(this.slot1x3[0] === this.slot2x3[1] && this.slot3x3[2] === this.slot1x3[0]) {
-            multiplicador = this.slot3x3[2] + 3;
+        if(this.slot1[0] === this.slot2[1] && this.slot3[2] === this.slot1[0]) {
+            multiplicador = this.slot3[2] + 3;
             return multiplicador;
         }
         
-        if (this.slot1x3[2] === this.slot2x3[1] && this.slot3x3[0] === this.slot1x3[2]) {
-            multiplicador = this.slot3x3[0] + 3;
+        if (this.slot1[2] === this.slot2[1] && this.slot3[0] === this.slot1[2]) {
+            multiplicador = this.slot3[0] + 3;
             return multiplicador;
         } 
         

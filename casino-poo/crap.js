@@ -46,6 +46,7 @@ var Crap = /** @class */ (function (_super) {
         this.tirarDados();
         if (this.dados == 7 || this.dados == 11) {
             console.log("el numero es ".concat(this.dados, ", avanza a la proxima ronda"));
+            this.pausaParaLeer();
             return this.elegirApuesta(paramCreditos);
         }
         else if (this.dados == 2 || this.dados == 3 || this.dados == 12) {
@@ -54,19 +55,21 @@ var Crap = /** @class */ (function (_super) {
             var resultadoApuesta = 0;
             var creditosApostados = this.getApuestaMinima();
             var totalCreditos = paramCreditos - creditosApostados;
-            this.mensajeResultado(resultadoApuesta, creditosApostados);
+            console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
+            this.pausaParaLeer();
             return totalCreditos;
         }
         else {
             console.log("el numero es ".concat(this.dados, ", tirar nuevamente los dados, y repetir el numero ").concat(this.dados, " para continuar"));
+            this.pausaParaLeer();
             return this.apostarSalidaSegundoIntento(paramCreditos, this.dados);
         }
     };
     Crap.prototype.apostarSalidaSegundoIntento = function (paramCreditos, resultadoAnterior) {
         this.tirarDados();
-        console.log("el resultado anterior fue: " + resultadoAnterior);
         if (this.dados == resultadoAnterior) {
             console.log("el nuevo numero es ".concat(this.dados, ", avanza a la proxima ronda"));
+            this.pausaParaLeer();
             return this.elegirApuesta(paramCreditos);
         }
         else if (this.dados == 7) {
@@ -76,11 +79,13 @@ var Crap = /** @class */ (function (_super) {
             var resultadoApuesta = 0;
             var creditosApostados = this.getApuestaMinima();
             var totalCreditos = paramCreditos - creditosApostados;
-            this.mensajeResultado(resultadoApuesta, creditosApostados);
+            console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
+            this.pausaParaLeer();
             return totalCreditos;
         }
         else {
             console.log("el nuevo numero es ".concat(this.dados, ", vuelve a tirar"));
+            this.pausaParaLeer();
             return this.apostarSalidaSegundoIntento(paramCreditos, this.dados);
         }
     };
@@ -210,7 +215,6 @@ var Crap = /** @class */ (function (_super) {
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apostarEnField(creditosApostados);
                 //REVISAR COMO SE MUESTRA EL RESULTADO.
-                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
@@ -219,7 +223,6 @@ var Crap = /** @class */ (function (_super) {
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apostarDontPassBar(creditosApostados);
                 //REVISAR COMO SE MUESTRA EL RESULTADO.
-                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
@@ -228,7 +231,6 @@ var Crap = /** @class */ (function (_super) {
                 totalCreditos -= creditosApostados;
                 resultadoApuesta = this.apostarPassLine(creditosApostados);
                 //REVISAR COMO SE MUESTRA EL RESULTADO.
-                this.mostrarResultado();
                 console.log(this.mensajeResultado(resultadoApuesta, creditosApostados));
                 totalCreditos += resultadoApuesta;
                 this.pausaParaLeer();
