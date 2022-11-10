@@ -44,6 +44,7 @@ generarTickets(datosDeMaquinas);
 
 function generarTickets(paramDatos: string[]): void {
     for (let index = 0; index < paramDatos.length; index++) {
-        fs.writeFileSync("maquina" + index + ".txt", paramDatos[index]);
+        let nombreArchivo: string =  "id" + juegosCasino[index].getID() + juegosCasino[index].getNombre();
+        fs.writeFileSync(nombreArchivo + ".txt", paramDatos[index]);
     }
 }

@@ -1,7 +1,4 @@
-import { Ticket } from "./interfazTicket";
-
-
-export class Juego implements Ticket {
+export class Juego {
     protected id : number;
     protected nombre: string;
     protected cantCreditosEnMaquina: number;

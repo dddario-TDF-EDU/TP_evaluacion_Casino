@@ -32,6 +32,7 @@ generarTickets(datosDeMaquinas);
 //console.log(datosDeMaquinas);
 function generarTickets(paramDatos) {
     for (var index = 0; index < paramDatos.length; index++) {
-        fs.writeFileSync("maquina" + index + ".txt", paramDatos[index]);
+        var nombreArchivo = juegosCasino[index].getID() + juegosCasino[index].getNombre();
+        fs.writeFileSync(nombreArchivo + ".txt", paramDatos[index]);
     }
 }
