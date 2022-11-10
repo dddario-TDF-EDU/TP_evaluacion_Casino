@@ -47,3 +47,4 @@ function generarTickets(paramDatos: string[]): void {
         fs.writeFileSync(nombreArchivo + ".txt", paramDatos[index]);
     }
 }
+//a
