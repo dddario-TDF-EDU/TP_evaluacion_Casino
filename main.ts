@@ -1,8 +1,7 @@
 import * as fs from 'fs';
-import { Tragamoneda } from "./casino-poo/tragamoneda";
-import { TragamonedaSummer } from "./casino-poo/tragamonedaSummer";
 import { Cliente } from "./casino-poo/cliente";
 import { Casino } from "./casino-poo/casino";
+import { TragamonedaSummer } from "./casino-poo/tragamonedaSummer";
 import { TragamonedaWinter } from "./casino-poo/TragamonedaWinter";
 import { Ruleta } from "./casino-poo/ruleta";
 import { Crap } from "./casino-poo/crap";
@@ -44,7 +43,7 @@ generarTickets(datosDeMaquinas);
 
 function generarTickets(paramDatos: string[]): void {
     for (let index = 0; index < paramDatos.length; index++) {
-        let nombreArchivo: string =  "id" + juegosCasino[index].getID() + juegosCasino[index].getNombre();
+        let nombreArchivo: string =  "id" +juegosCasino[index].getID() + juegosCasino[index].getNombre();
         fs.writeFileSync(nombreArchivo + ".txt", paramDatos[index]);
     }
 }
