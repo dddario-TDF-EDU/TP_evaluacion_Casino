@@ -26,7 +26,3 @@ Diferencias de tipos de apuesta en tragamonedas:
 -El tragamonedas Summer posee tres carretes y por pantalla muestra tres simbolos por carrete.
 
 -Solo tiene un tipo de apuesta, pero permite decidir si realizar la apuesta minima (indicada por la maquina) o un valor a elección. Para ganar deben coincidir tres simbolos ya sea en horizontal o en diagonal.
-
-
-
-

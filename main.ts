@@ -9,6 +9,10 @@ import { Crap } from "./casino-poo/crap";
 import { Juego } from "./casino-poo/juego";
 
 
+
+
+
+
 let summer1: TragamonedaSummer = new TragamonedaSummer(0, "Tragamonedas Summer", 10000, 100);
 let winter1: TragamonedaWinter = new TragamonedaWinter(1, "Tragamonedas Winter", 10000);
 let ruleta1: Ruleta = new Ruleta(2, "La Ruleta",10000);
