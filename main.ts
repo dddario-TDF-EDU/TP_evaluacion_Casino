@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import { Tragamoneda } from "./casino-poo/tragamoneda";
 import { TragamonedaSummer } from "./casino-poo/tragamonedaSummer";
 import { Cliente } from "./casino-poo/cliente";
@@ -8,15 +9,10 @@ import { Crap } from "./casino-poo/crap";
 import { Juego } from "./casino-poo/juego";
 
 
-
-//falta resolver la clase Cliente-Tesorersia-Casino para poder probar esto.
-
-
 let summer1: TragamonedaSummer = new TragamonedaSummer(0, "Tragamonedas Summer", 10000, 100);
 let winter1: TragamonedaWinter = new TragamonedaWinter(1, "Tragamonedas Winter", 10000);
 let ruleta1: Ruleta = new Ruleta(2, "La Ruleta",10000);
 let crap1: Crap = new Crap(3, "Craps", 10000, 25);
-//comentario
 
 let juegosCasino: Juego[] = [summer1, winter1, ruleta1, crap1];
 
@@ -33,24 +29,17 @@ function cantDineroCliente(): number {
 }
 
 let cliente1: Cliente = new Cliente(cantDineroCliente());
-
-//instanciamos la clase Casino.
-
 let casino777: Casino = new Casino(100000, 0.5, cliente1, juegosCasino);
-
-//convertimos todos el dinero del cliente en credito. 
-//esto quedo re feo
-// cliente1.setCreditos(casino777.comprarCreditos(cliente1.getDinero()));
-// cliente1.setDinero(0);
-// cliente1.setCreditos(menuCentral(cliente1.getCreditos(), summer1, winter1, ruleta1, crap1));
-// //UNA VEZ TERMINADO DE JUGAR RECUPERAMOS EL DINERO.
-// cliente1.setDinero(casino777.intercambiarCreditos(cliente1.getCreditos()))
-
-//FALTA HACER EL DESCUENTO Y SUMA A LOS JUEGOS.
 
 casino777.convertirDineroCliente();
 casino777.menuCentral();
 casino777.devolverDineroCliente();
 let datosDeMaquinas: string[] = casino777.impresionTicket();
+generarTickets(datosDeMaquinas);
+//console.log(datosDeMaquinas);
 
-console.log(datosDeMaquinas);
+function generarTickets(paramDatos: string[]): void {
+    for (let index = 0; index < paramDatos.length; index++) {
+        fs.writeFileSync("maquina" + index + ".txt", paramDatos[index]);
+    }
+}

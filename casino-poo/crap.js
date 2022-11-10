@@ -28,17 +28,9 @@ var Crap = /** @class */ (function (_super) {
         return this.dados;
     };
     Crap.prototype.tirarDados = function () {
-        var numeroSalida = Math.floor(Math.random() * 12) + 1;
+        var numeroSalida = Math.floor(Math.random() * (12 - 2 + 1) + 2);
         this.dados = numeroSalida;
     };
-    //POSIBLEMENTE SE ELIMINE
-    // public apuesta(paramCreditos: number): number {
-    //     this.tirarDados();
-    //     let multiplicador: number = 0;
-    //     let cantCreditos: number = paramCreditos * multiplicador;
-    //     return cantCreditos;
-    // }
-    //VER REFORMULAR
     Crap.prototype.mostrarResultado = function () {
         console.log(this.dados);
     };
